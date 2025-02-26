@@ -2,19 +2,30 @@ import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
-import { CalendarDays, ChevronDown, ZoomIn, ZoomOut } from "lucide-react";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
-import { useState, useEffect } from "react";
+import { CalendarDays, ChevronDown, ZoomIn, ZoomOut, ChevronUp } from "lucide-react";
+import { motion, AnimatePresence, useAnimation, useScroll, useTransform } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import type { HistoricalEvent } from "@shared/schema";
 import TimelineEvent from "@/components/Timeline/TimelineEvent";
 import BackgroundMusic from "@/components/BackgroundMusic";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Timeline() {
   const [selectedCategory, setSelectedCategory] = useState<string>("pre-revolution");
   const [zoom, setZoom] = useState(1);
   const controls = useAnimation();
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const progressOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0.6, 1, 1, 0.6]);
 
   const eventsQuery = useQuery<HistoricalEvent[]>({
     queryKey: ["/api/events"],
@@ -26,7 +37,22 @@ export default function Timeline() {
       y: 0,
       transition: { duration: 0.8, ease: "easeOut" }
     });
+
+    const handleScroll = () => {
+      if (window.scrollY > 500) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [controls]);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   if (eventsQuery.isLoading) {
     return <LoadingSkeleton />;
@@ -39,8 +65,36 @@ export default function Timeline() {
   const events = eventsQuery.data.filter(e => e.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-dot-pattern">
+    <div className="min-h-screen bg-dot-pattern" ref={containerRef}>
       <BackgroundMusic />
+
+      {/* Progress Bar */}
+      <motion.div 
+        className="fixed top-0 left-0 w-1 h-full bg-primary/20 z-50"
+        style={{ opacity: progressOpacity }}
+      >
+        <motion.div 
+          className="w-full bg-primary"
+          style={{ height: progressHeight }}
+        />
+      </motion.div>
+
+      {/* Scroll to Top Button */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            className="fixed bottom-4 right-4 p-3 rounded-full bg-primary text-white shadow-lg z-50"
+            onClick={scrollToTop}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <ChevronUp className="w-6 h-6" />
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* Hero Section */}
       <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
@@ -102,31 +156,33 @@ export default function Timeline() {
         </motion.div>
       </section>
 
-      {/* Category Navigation and Zoom Controls */}
+      {/* Category Navigation */}
       <div className="container mx-auto px-4 -mt-8">
         <Card className="border-2 border-primary/20 shadow-lg">
           <CardContent className="p-4">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <nav className="flex flex-wrap gap-2 md:gap-4 justify-center">
-                <CategoryButton
-                  active={selectedCategory === "pre-revolution"}
-                  onClick={() => setSelectedCategory("pre-revolution")}
-                >
-                  Bối cảnh trước Cách mạng
-                </CategoryButton>
-                <CategoryButton
-                  active={selectedCategory === "revolution"}
-                  onClick={() => setSelectedCategory("revolution")}
-                >
-                  Diễn biến Cách mạng
-                </CategoryButton>
-                <CategoryButton
-                  active={selectedCategory === "post-revolution"}
-                  onClick={() => setSelectedCategory("post-revolution")}
-                >
-                  Sau Cách mạng
-                </CategoryButton>
-              </nav>
+              <ScrollArea className="w-full md:w-auto">
+                <nav className="flex flex-nowrap md:flex-wrap gap-2 md:gap-4 p-1">
+                  <CategoryButton
+                    active={selectedCategory === "pre-revolution"}
+                    onClick={() => setSelectedCategory("pre-revolution")}
+                  >
+                    Bối cảnh trước Cách mạng
+                  </CategoryButton>
+                  <CategoryButton
+                    active={selectedCategory === "revolution"}
+                    onClick={() => setSelectedCategory("revolution")}
+                  >
+                    Diễn biến Cách mạng
+                  </CategoryButton>
+                  <CategoryButton
+                    active={selectedCategory === "post-revolution"}
+                    onClick={() => setSelectedCategory("post-revolution")}
+                  >
+                    Sau Cách mạng
+                  </CategoryButton>
+                </nav>
+              </ScrollArea>
 
               {!isMobile && (
                 <div className="flex items-center gap-2">
@@ -135,14 +191,21 @@ export default function Timeline() {
                     size="icon"
                     onClick={() => setZoom(z => Math.max(0.5, z - 0.1))}
                     disabled={zoom <= 0.5}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
                   >
                     <ZoomOut className="h-4 w-4" />
                   </Button>
+                  <div className="w-20 text-center text-sm">
+                    {Math.round(zoom * 100)}%
+                  </div>
                   <Button
                     variant="outline"
                     size="icon"
                     onClick={() => setZoom(z => Math.min(1.5, z + 0.1))}
                     disabled={zoom >= 1.5}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
                   >
                     <ZoomIn className="h-4 w-4" />
                   </Button>
@@ -191,11 +254,16 @@ export default function Timeline() {
               className="space-y-12"
             >
               {events.map((event, index) => (
-                <div
+                <motion.div
                   key={event.id}
                   className={`relative flex flex-col ${isMobile ? "" : "md:flex-row"} items-start gap-8 ${
                     !isMobile && index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: { opacity: 1, y: 0 }
+                  }}
+                  transition={{ duration: 0.5 }}
                 >
                   {/* Date Marker */}
                   <motion.div
@@ -211,7 +279,7 @@ export default function Timeline() {
                   }`}>
                     <TimelineEvent event={event} />
                   </div>
-                </div>
+                </motion.div>
               ))}
             </motion.div>
           </AnimatePresence>
@@ -229,7 +297,7 @@ function CategoryButton({ children, active, onClick }: {
   return (
     <Button
       variant={active ? "default" : "ghost"}
-      className={`relative text-sm md:text-lg font-medium ${
+      className={`relative text-sm md:text-lg font-medium whitespace-nowrap ${
         active ? "bg-primary text-primary-foreground" : "hover:text-primary"
       }`}
       onClick={onClick}
