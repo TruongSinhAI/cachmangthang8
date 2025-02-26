@@ -5,6 +5,8 @@ export interface IStorage {
   getEventById(id: number): Promise<HistoricalEvent | undefined>;
   getEventsByCategory(category: string): Promise<HistoricalEvent[]>;
   createEvent(event: InsertEvent): Promise<HistoricalEvent>;
+  updateEvent(id: number, event: InsertEvent): Promise<HistoricalEvent | undefined>;
+  deleteEvent(id: number): Promise<boolean>;
   saveChatMessage(question: string, answer: string): Promise<ChatMessage>;
 }
 
@@ -125,9 +127,22 @@ export class MemStorage implements IStorage {
 
   async createEvent(event: InsertEvent): Promise<HistoricalEvent> {
     const id = this.currentEventId++;
-    const newEvent: HistoricalEvent = { ...event, id };
+    const newEvent: HistoricalEvent = { ...event, id, imageUrl: event.imageUrl || null };
     this.events.set(id, newEvent);
     return newEvent;
+  }
+
+  async updateEvent(id: number, event: InsertEvent): Promise<HistoricalEvent | undefined> {
+    if (!this.events.has(id)) {
+      return undefined;
+    }
+    const updatedEvent: HistoricalEvent = { ...event, id, imageUrl: event.imageUrl || null };
+    this.events.set(id, updatedEvent);
+    return updatedEvent;
+  }
+
+  async deleteEvent(id: number): Promise<boolean> {
+    return this.events.delete(id);
   }
 
   async saveChatMessage(question: string, answer: string): Promise<ChatMessage> {

@@ -1,6 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { Lock } from "lucide-react";
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -54,6 +55,21 @@ export default function Navbar() {
             >
               Trợ lý AI
             </button>
+            <Link href="/admin">
+              <a className={cn(
+                "relative font-medium hover:text-primary transition-colors flex items-center gap-2",
+                location === "/admin" && "text-primary"
+              )}>
+                {location === "/admin" && (
+                  <motion.span
+                    layoutId="navbar-indicator"
+                    className="absolute -bottom-[1.5px] left-0 right-0 h-0.5 bg-primary"
+                  />
+                )}
+                <Lock className="w-4 h-4" />
+                Quản trị
+              </a>
+            </Link>
           </div>
         </div>
       </div>
