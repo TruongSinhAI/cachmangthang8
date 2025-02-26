@@ -6,10 +6,10 @@ import { CalendarDays, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import type { HistoricalEvent } from "@shared/schema";
+import TimelineEvent from "@/components/Timeline/TimelineEvent";
 
 export default function Timeline() {
   const [selectedCategory, setSelectedCategory] = useState<string>("pre-revolution");
-  const [expandedEvent, setExpandedEvent] = useState<number | null>(null);
 
   const eventsQuery = useQuery<HistoricalEvent[]>({
     queryKey: ["/api/events"],
@@ -28,41 +28,60 @@ export default function Timeline() {
   return (
     <div className="min-h-screen bg-dot-pattern">
       {/* Hero Section */}
-      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.6 }}
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('https://source.unsplash.com/random/1920x1080?vietnam,revolution')"
+            backgroundImage: "url('/images/historical-background.jpg')"
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-background" />
+        <div className="absolute inset-0" style={{ 
+          backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
+          opacity: 0.1
+        }} />
 
         <div className="relative container mx-auto px-4 text-center">
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold text-white mb-4"
+            className="space-y-6"
           >
-            Dòng thời gian Cách mạng
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-white/90 max-w-2xl mx-auto"
-          >
-            Khám phá các sự kiện quan trọng trong tiến trình Cách mạng Tháng Tám năm 1945
-          </motion.p>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 font-serif">
+              Dòng thời gian
+              <span className="block text-primary mt-4" style={{ textShadow: "0 0 30px rgba(255,255,255,0.2)" }}>
+                Cách mạng Tháng Tám
+              </span>
+            </h1>
+            <div className="w-24 h-1 bg-primary mx-auto" />
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              Khám phá các sự kiện quan trọng trong tiến trình Cách mạng Tháng Tám năm 1945
+            </p>
+          </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+          >
+            <ChevronDown className="h-8 w-8" />
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Category Navigation */}
       <div className="container mx-auto px-4 -mt-8">
-        <Card className="border-2 border-primary/20">
-          <CardContent className="p-2">
-            <div className="flex gap-2">
+        <Card className="border-2 border-primary/20 shadow-lg">
+          <CardContent className="p-4">
+            <nav className="flex gap-4">
               <CategoryButton
                 active={selectedCategory === "pre-revolution"}
                 onClick={() => setSelectedCategory("pre-revolution")}
@@ -81,7 +100,7 @@ export default function Timeline() {
               >
                 Sau Cách mạng
               </CategoryButton>
-            </div>
+            </nav>
           </CardContent>
         </Card>
       </div>
@@ -89,81 +108,52 @@ export default function Timeline() {
       {/* Timeline */}
       <div className="container mx-auto px-4 py-12">
         <div className="relative">
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary/20" />
-
-          <div className="space-y-12">
-            {events.map((event, index) => (
-              <motion.div
-                key={event.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className={`relative flex items-center gap-8 ${
-                  index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                }`}
-              >
-                {/* Date Marker */}
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary"
-                />
-
-                {/* Event Card */}
-                <div className={`w-1/2 ${index % 2 === 0 ? "pr-8" : "pl-8"}`}>
-                  <Card className="group border-2 border-primary/20 hover:shadow-lg transition-all duration-300">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-2 text-primary mb-3">
-                        <CalendarDays className="h-5 w-5" />
-                        <span className="font-medium">{event.date}</span>
-                      </div>
-
-                      <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
-                        {event.title}
-                      </h3>
-
-                      <AnimatePresence>
-                        {expandedEvent === event.id ? (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                          >
-                            <p className="text-muted-foreground mb-4">{event.description}</p>
-                            {event.imageUrl && (
-                              <img
-                                src={event.imageUrl}
-                                alt={event.title}
-                                className="w-full h-48 object-cover rounded-lg mb-4"
-                              />
-                            )}
-                          </motion.div>
-                        ) : (
-                          <p className="text-muted-foreground line-clamp-2 mb-4">
-                            {event.description}
-                          </p>
-                        )}
-                      </AnimatePresence>
-
-                      <Button
-                        variant="ghost"
-                        className="w-full justify-between"
-                        onClick={() => setExpandedEvent(
-                          expandedEvent === event.id ? null : event.id
-                        )}
-                      >
-                        <span>{expandedEvent === event.id ? "Thu gọn" : "Xem thêm"}</span>
-                        <ChevronDown
-                          className={`h-4 w-4 transition-transform ${
-                            expandedEvent === event.id ? "rotate-180" : ""
-                          }`}
-                        />
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </div>
-              </motion.div>
-            ))}
+          {/* Timeline Line */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5">
+            <div className="h-full bg-gradient-to-b from-primary/40 via-primary/20 to-transparent" />
           </div>
+
+          {/* Events */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={selectedCategory}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              variants={{
+                hidden: { opacity: 0 },
+                show: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.2
+                  }
+                }
+              }}
+              className="space-y-12"
+            >
+              {events.map((event, index) => (
+                <div
+                  key={event.id}
+                  className={`relative flex items-start gap-8 ${
+                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                  }`}
+                >
+                  {/* Date Marker */}
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    whileHover={{ scale: 1.2 }}
+                    className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary shadow-lg shadow-primary/20"
+                  />
+
+                  {/* Event Card */}
+                  <div className={`w-1/2 ${index % 2 === 0 ? "pr-8" : "pl-8"}`}>
+                    <TimelineEvent event={event} />
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </div>
@@ -178,14 +168,17 @@ function CategoryButton({ children, active, onClick }: {
   return (
     <Button
       variant={active ? "default" : "ghost"}
-      className={`text-lg relative ${active ? "" : "hover:text-primary"}`}
+      className={`relative text-lg font-medium ${
+        active ? "bg-primary text-primary-foreground" : "hover:text-primary"
+      }`}
       onClick={onClick}
     >
       {children}
       {active && (
         <motion.div
           layoutId="activeCategory"
-          className="absolute inset-0 bg-primary opacity-20 rounded-md"
+          className="absolute inset-0 rounded-md"
+          transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
         />
       )}
     </Button>
@@ -195,10 +188,15 @@ function CategoryButton({ children, active, onClick }: {
 function LoadingSkeleton() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <Skeleton className="h-40 w-full mb-8" />
+      <Skeleton className="h-[40vh] w-full mb-8 rounded-xl" />
+      <div className="flex gap-4 mb-8">
+        <Skeleton className="h-12 w-40" />
+        <Skeleton className="h-12 w-40" />
+        <Skeleton className="h-12 w-40" />
+      </div>
       <div className="space-y-8">
         {Array(5).fill(0).map((_, i) => (
-          <Skeleton key={i} className="h-32 w-full" />
+          <Skeleton key={i} className="h-48 w-full rounded-xl" />
         ))}
       </div>
     </div>
