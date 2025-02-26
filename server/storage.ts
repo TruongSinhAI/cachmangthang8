@@ -1,27 +1,43 @@
-import { HistoricalEvent, InsertEvent, ChatMessage } from "@shared/schema";
+import { HistoricalEvent, InsertEvent, ChatMessage, HistoricalContent, InsertContent } from "@shared/schema";
 
 export interface IStorage {
+  // Event methods
   getEvents(): Promise<HistoricalEvent[]>;
   getEventById(id: number): Promise<HistoricalEvent | undefined>;
   getEventsByCategory(category: string): Promise<HistoricalEvent[]>;
   createEvent(event: InsertEvent): Promise<HistoricalEvent>;
   updateEvent(id: number, event: InsertEvent): Promise<HistoricalEvent | undefined>;
   deleteEvent(id: number): Promise<boolean>;
+
+  // Content methods
+  getContents(): Promise<HistoricalContent[]>;
+  getContentById(id: number): Promise<HistoricalContent | undefined>;
+  getContentsByType(type: string): Promise<HistoricalContent[]>;
+  createContent(content: InsertContent): Promise<HistoricalContent>;
+  updateContent(id: number, content: InsertContent): Promise<HistoricalContent | undefined>;
+  deleteContent(id: number): Promise<boolean>;
+
+  // Chat methods
   saveChatMessage(question: string, answer: string): Promise<ChatMessage>;
 }
 
 export class MemStorage implements IStorage {
   private events: Map<number, HistoricalEvent>;
+  private contents: Map<number, HistoricalContent>;
   private chatMessages: ChatMessage[];
   private currentEventId: number;
+  private currentContentId: number;
   private currentChatId: number;
 
   constructor() {
     this.events = new Map();
+    this.contents = new Map();
     this.chatMessages = [];
     this.currentEventId = 1;
+    this.currentContentId = 1;
     this.currentChatId = 1;
     this.initializeDefaultEvents();
+    this.initializeDefaultContent();
   }
 
   private initializeDefaultEvents() {
@@ -111,6 +127,34 @@ export class MemStorage implements IStorage {
     defaultEvents.forEach(event => this.createEvent(event));
   }
 
+  private initializeDefaultContent() {
+    const defaultContents: InsertContent[] = [
+      {
+        title: "Bối cảnh Việt Nam trước Cách mạng Tháng Tám",
+        content: "Đầu năm 1945, Chiến tranh thế giới thứ hai bước vào giai đoạn kết thúc. Ở Việt Nam, thực dân Pháp đã bị phát xít Nhật đảo chính...",
+        type: "context",
+        imageUrl: null,
+        order: 1
+      },
+      {
+        title: "Diễn biến chính của Cách mạng",
+        content: "Ngày 9/3/1945, phát xít Nhật đảo chính Pháp. Ngay trong đêm 9/3/1945, Ban Thường vụ Trung ương Đảng họp...",
+        type: "process",
+        imageUrl: null,
+        order: 2
+      },
+      {
+        title: "Ý nghĩa lịch sử",
+        content: "Cách mạng Tháng Tám năm 1945 thành công đã mở ra kỷ nguyên mới trong lịch sử dân tộc Việt Nam...",
+        type: "significance",
+        imageUrl: null,
+        order: 3
+      }
+    ];
+
+    defaultContents.forEach(content => this.createContent(content));
+  }
+
   async getEvents(): Promise<HistoricalEvent[]> {
     return Array.from(this.events.values()).sort((a, b) => a.order - b.order);
   }
@@ -143,6 +187,40 @@ export class MemStorage implements IStorage {
 
   async deleteEvent(id: number): Promise<boolean> {
     return this.events.delete(id);
+  }
+
+  async getContents(): Promise<HistoricalContent[]> {
+    return Array.from(this.contents.values()).sort((a, b) => a.order - b.order);
+  }
+
+  async getContentById(id: number): Promise<HistoricalContent | undefined> {
+    return this.contents.get(id);
+  }
+
+  async getContentsByType(type: string): Promise<HistoricalContent[]> {
+    return Array.from(this.contents.values())
+      .filter(content => content.type === type)
+      .sort((a, b) => a.order - b.order);
+  }
+
+  async createContent(content: InsertContent): Promise<HistoricalContent> {
+    const id = this.currentContentId++;
+    const newContent: HistoricalContent = { ...content, id, imageUrl: content.imageUrl || null };
+    this.contents.set(id, newContent);
+    return newContent;
+  }
+
+  async updateContent(id: number, content: InsertContent): Promise<HistoricalContent | undefined> {
+    if (!this.contents.has(id)) {
+      return undefined;
+    }
+    const updatedContent: HistoricalContent = { ...content, id, imageUrl: content.imageUrl || null };
+    this.contents.set(id, updatedContent);
+    return updatedContent;
+  }
+
+  async deleteContent(id: number): Promise<boolean> {
+    return this.contents.delete(id);
   }
 
   async saveChatMessage(question: string, answer: string): Promise<ChatMessage> {

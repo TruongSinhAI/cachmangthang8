@@ -24,6 +24,26 @@ export const insertEventSchema = createInsertSchema(historicalEvents).pick({
 export type InsertEvent = z.infer<typeof insertEventSchema>;
 export type HistoricalEvent = typeof historicalEvents.$inferSelect;
 
+export const historicalContent = pgTable("historical_content", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  content: text("content").notNull(),
+  type: text("type").notNull(), // context, process, significance
+  imageUrl: text("image_url"),
+  order: integer("order").notNull(),
+});
+
+export const insertContentSchema = createInsertSchema(historicalContent).pick({
+  title: true,
+  content: true,
+  type: true,
+  imageUrl: true,
+  order: true,
+});
+
+export type InsertContent = z.infer<typeof insertContentSchema>;
+export type HistoricalContent = typeof historicalContent.$inferSelect;
+
 export const chatMessages = pgTable("chat_messages", {
   id: serial("id").primaryKey(),
   question: text("question").notNull(),
