@@ -1,14 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ChatbotDialog from "@/components/Chatbot/ChatbotDialog";
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/* Hero Section with Parallax */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <motion.div 
+          style={{ y, opacity }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.8 }}
           className="absolute inset-0 bg-cover bg-center"
@@ -29,13 +34,33 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="mb-8"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 font-serif">
+            <motion.h1 
+              className="text-5xl md:text-7xl font-bold text-white mb-4 font-serif tracking-tight leading-none"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
               Hành trình
-              <span className="block text-primary mt-4" style={{ textShadow: "0 0 30px rgba(255,255,255,0.2)" }}>
+              <motion.span 
+                className="block text-primary mt-4 relative"
+                style={{ textShadow: "0 0 30px rgba(255,255,255,0.2)" }}
+                whileHover={{ scale: 1.05 }}
+              >
                 Cách mạng Tháng Tám
-              </span>
-            </h1>
-            <div className="w-24 h-1 bg-primary mx-auto my-6" />
+                <motion.div
+                  className="absolute -inset-x-8 -inset-y-4 bg-primary/10 rounded-xl -z-10"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                />
+              </motion.span>
+            </motion.h1>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 0.4, duration: 1 }}
+              className="w-24 h-1 bg-primary mx-auto my-6"
+            />
           </motion.div>
 
           <motion.p
@@ -55,21 +80,33 @@ export default function Home() {
             className="flex flex-col md:flex-row gap-6 justify-center"
           >
             <Link href="/timeline">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button 
+                  size="lg" 
+                  className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 border-2 border-primary/20 shadow-lg shadow-primary/20 relative overflow-hidden group"
+                >
+                  <span className="relative z-10">Bắt đầu Hành trình</span>
+                  <motion.div
+                    className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"
+                    style={{ skewX: "-20deg" }}
+                  />
+                </Button>
+              </motion.div>
+            </Link>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button 
                 size="lg" 
-                className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 border-2 border-primary/20 shadow-lg shadow-primary/20"
+                variant="outline" 
+                className="text-lg px-8 py-6 text-white border-2 border-white/30 hover:bg-white/10 backdrop-blur-sm relative overflow-hidden group"
+                onClick={() => document.getElementById("chatbot-trigger")?.click()}
               >
-                Bắt đầu Hành trình
+                <span className="relative z-10">Hỏi đáp với Trợ lý AI</span>
+                <motion.div
+                  className="absolute inset-0 bg-white/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"
+                  style={{ skewX: "-20deg" }}
+                />
               </Button>
-            </Link>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="text-lg px-8 py-6 text-white border-2 border-white/30 hover:bg-white/10 backdrop-blur-sm"
-              onClick={() => document.getElementById("chatbot-trigger")?.click()}
-            >
-              Hỏi đáp với Trợ lý AI
-            </Button>
+            </motion.div>
           </motion.div>
         </div>
 
@@ -156,8 +193,14 @@ function FeatureCard({ icon, title, description, href, onClick }: {
     >
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
       <div className="relative">
-        <span className="text-5xl mb-6 block">{icon}</span>
-        <h3 className="text-2xl font-bold mb-3">{title}</h3>
+        <motion.span 
+          className="text-5xl mb-6 block"
+          whileHover={{ scale: 1.2, rotate: 10 }}
+          transition={{ type: "spring", stiffness: 200 }}
+        >
+          {icon}
+        </motion.span>
+        <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{title}</h3>
         <p className="text-lg text-muted-foreground leading-relaxed">{description}</p>
       </div>
     </motion.div>
