@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
-import { CalendarDays, ChevronDown } from "lucide-react";
+import { CalendarDays, ChevronDown, ZoomIn, ZoomOut } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import type { HistoricalEvent } from "@shared/schema";
@@ -10,6 +10,7 @@ import TimelineEvent from "@/components/Timeline/TimelineEvent";
 
 export default function Timeline() {
   const [selectedCategory, setSelectedCategory] = useState<string>("pre-revolution");
+  const [zoom, setZoom] = useState(1);
 
   const eventsQuery = useQuery<HistoricalEvent[]>({
     queryKey: ["/api/events"],
@@ -77,37 +78,64 @@ export default function Timeline() {
         </motion.div>
       </section>
 
-      {/* Category Navigation */}
+      {/* Category Navigation and Zoom Controls */}
       <div className="container mx-auto px-4 -mt-8">
         <Card className="border-2 border-primary/20 shadow-lg">
           <CardContent className="p-4">
-            <nav className="flex gap-4">
-              <CategoryButton
-                active={selectedCategory === "pre-revolution"}
-                onClick={() => setSelectedCategory("pre-revolution")}
-              >
-                Bối cảnh trước Cách mạng
-              </CategoryButton>
-              <CategoryButton
-                active={selectedCategory === "revolution"}
-                onClick={() => setSelectedCategory("revolution")}
-              >
-                Diễn biến Cách mạng
-              </CategoryButton>
-              <CategoryButton
-                active={selectedCategory === "post-revolution"}
-                onClick={() => setSelectedCategory("post-revolution")}
-              >
-                Sau Cách mạng
-              </CategoryButton>
-            </nav>
+            <div className="flex justify-between items-center">
+              <nav className="flex gap-4">
+                <CategoryButton
+                  active={selectedCategory === "pre-revolution"}
+                  onClick={() => setSelectedCategory("pre-revolution")}
+                >
+                  Bối cảnh trước Cách mạng
+                </CategoryButton>
+                <CategoryButton
+                  active={selectedCategory === "revolution"}
+                  onClick={() => setSelectedCategory("revolution")}
+                >
+                  Diễn biến Cách mạng
+                </CategoryButton>
+                <CategoryButton
+                  active={selectedCategory === "post-revolution"}
+                  onClick={() => setSelectedCategory("post-revolution")}
+                >
+                  Sau Cách mạng
+                </CategoryButton>
+              </nav>
+
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => setZoom(z => Math.max(0.5, z - 0.1))}
+                  disabled={zoom <= 0.5}
+                >
+                  <ZoomOut className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => setZoom(z => Math.min(1.5, z + 0.1))}
+                  disabled={zoom >= 1.5}
+                >
+                  <ZoomIn className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </div>
 
       {/* Timeline */}
       <div className="container mx-auto px-4 py-12">
-        <div className="relative">
+        <motion.div 
+          className="relative"
+          style={{ 
+            scale: zoom,
+            transformOrigin: "center top"
+          }}
+        >
           {/* Timeline Line */}
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5">
             <div className="h-full bg-gradient-to-b from-primary/40 via-primary/20 to-transparent" />
@@ -154,7 +182,7 @@ export default function Timeline() {
               ))}
             </motion.div>
           </AnimatePresence>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
