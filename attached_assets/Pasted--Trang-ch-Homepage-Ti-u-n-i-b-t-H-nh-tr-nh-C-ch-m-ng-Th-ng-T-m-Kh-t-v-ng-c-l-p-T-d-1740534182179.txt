@@ -1,0 +1,247 @@
+. Trang chủ (Homepage):
+
+Tiêu đề nổi bật: "Hành trình Cách mạng Tháng Tám: Khát vọng Độc lập, Tự do" (Font chữ lớn, trang trọng, màu vàng nổi bật trên nền đỏ).
+
+Hình ảnh:
+
+Banner chính: Ảnh động (slider) gồm 3-5 hình ảnh chất lượng cao, mang tính biểu tượng:
+
+Cờ đỏ sao vàng tung bay tại Quảng trường Ba Đình: Thể hiện khí thế hào hùng của Cách mạng Tháng Tám thành công.
+
+Chân dung Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập: Nhấn mạnh vai trò lãnh đạo của Bác và sự kiện trọng đại khai sinh nước Việt Nam Dân chủ Cộng hòa.
+
+Đoàn người dân Hà Nội xuống đường khởi nghĩa: Thể hiện sức mạnh của quần chúng nhân dân trong Cách mạng Tháng Tám.
+
+Bản Tuyên ngôn Độc lập: Tài liệu lịch sử vô giá, khẳng định chủ quyền và độc lập của dân tộc.
+
+Lược đồ Việt Nam hình chữ S: Biểu tượng đất nước Việt Nam thống nhất, độc lập, tự do.
+
+Hình ảnh nền (background): Hoa văn trống đồng Đông Sơn mờ ảo, tạo cảm giác truyền thống, lịch sử.
+
+Giới thiệu ngắn gọn:
+
+Đoạn văn ngắn (khoảng 3-4 dòng): "Chào mừng bạn đến với website tương tác 'Hành trình Cách mạng Tháng Tám'. Cùng chúng tôi khám phá lại những trang sử hào hùng, những dấu mốc lịch sử chói lọi của dân tộc Việt Nam trong cuộc Cách mạng Tháng Tám năm 1945, khơi dậy khát vọng độc lập, tự do và lòng tự hào dân tộc." (Font chữ cỡ vừa, màu trắng nổi bật trên nền đỏ).
+
+Mục đích website: "Website được xây dựng với mục đích cung cấp kiến thức toàn diện, chính xác về Cách mạng Tháng Tám, đồng thời mang đến trải nghiệm khám phá lịch sử tương tác, thú vị và hấp dẫn cho người dùng, đặc biệt là thế hệ trẻ." (Font chữ nhỏ hơn, màu trắng).
+
+Điều hướng chính (Nút bấm lớn, thiết kế nổi bật, màu vàng trên nền đỏ):
+
+"Khám phá Hành trình (Timeline Tương tác)" (Biểu tượng đồng hồ cát hoặc đường đi).
+
+"Tìm hiểu về Cách mạng (Nội dung Lý thuyết)" (Biểu tượng quyển sách).
+
+"Hỏi đáp cùng Trợ lý AI" (Biểu tượng chatbot hoặc bóng đèn).
+
+"Về Chúng tôi" (Nút nhỏ hơn, ở góc phải trên cùng trang).
+
+2. Trang "Khám phá Hành trình" (Timeline Tương tác):
+
+Thiết kế Timeline trực quan:
+
+Kiểu dáng: Timeline ngang, kéo dài theo chiều ngang màn hình, chia thành các mốc thời gian chính.
+
+Màu sắc: Đường timeline màu vàng đậm trên nền trắng hoặc xám nhạt. Các dấu mốc thời gian là hình tròn hoặc vuông, màu đỏ hoặc vàng, nổi bật trên timeline.
+
+Phân chia giai đoạn: Timeline được chia thành 4 giai đoạn chính:
+
+Giai đoạn 1: Bối cảnh trước Cách mạng (Trước 1945) (Màu sắc: Xám nhạt).
+
+Giai đoạn 2: Chuẩn bị Cách mạng (1930 - 1945) (Màu sắc: Vàng nhạt).
+
+Giai đoạn 3: Diễn biến Cách mạng Tháng Tám (Tháng 8/1945) (Màu sắc: Đỏ tươi).
+
+Giai đoạn 4: Thành công và Ý nghĩa (Sau 1945) (Màu sắc: Vàng đậm).
+
+Dấu mốc thời gian: Mỗi dấu mốc thể hiện một sự kiện quan trọng của Cách mạng Tháng Tám, kèm theo:
+
+Ngày tháng năm: Ví dụ: "2/9/1945", "19/8/1945", "1930".
+
+Tiêu đề ngắn gọn: Ví dụ: "Tuyên ngôn Độc lập", "Tổng khởi nghĩa Hà Nội", "Đảng Cộng sản Việt Nam ra đời".
+
+Biểu tượng/Hình ảnh minh họa nhỏ: Ví dụ: Cờ đỏ sao vàng, ảnh Bác Hồ, ảnh đoàn quân khởi nghĩa.
+
+Nội dung tương tác:
+
+Click vào dấu mốc:
+
+Popup/Modal: Hiển thị hộp thoại popup/modal (màu trắng hoặc xám nhạt, viền vàng) chứa thông tin chi tiết về sự kiện:
+
+Tiêu đề sự kiện (Font lớn, đậm).
+
+Văn bản mô tả ngắn gọn (khoảng 5-7 dòng), súc tích, dễ hiểu, nhấn mạnh ý nghĩa lịch sử của sự kiện.
+
+Hình ảnh/Video tư liệu liên quan (nếu có).
+
+Trích dẫn lịch sử (ngắn gọn, câu nói nổi tiếng liên quan đến sự kiện, nguồn trích dẫn rõ ràng).
+
+Nút "Tìm hiểu thêm": Liên kết đến trang "Tìm hiểu về Cách mạng" (phần nội dung lý thuyết) tương ứng với sự kiện đó để người dùng đọc sâu hơn.
+
+Hiệu ứng động:
+
+Khi hover chuột vào dấu mốc: Dấu mốc phóng to nhẹ, đổi màu, xuất hiện hiệu ứng nhấp nháy nhẹ.
+
+Khi click vào dấu mốc: Timeline xung quanh dấu mốc mờ đi, popup/modal hiện ra với hiệu ứng fade-in hoặc slide-in.
+
+Ví dụ sự kiện trên Timeline:
+
+1930: "Đảng Cộng sản Việt Nam ra đời" (Biểu tượng: Búa liềm, Ảnh: Hội nghị thành lập Đảng).
+
+1941: "Mặt trận Việt Minh thành lập" (Biểu tượng: Ngôi sao, Ảnh: Hội nghị Trung ương 8).
+
+19/8/1945: "Tổng khởi nghĩa Hà Nội" (Biểu tượng: Cờ đỏ sao vàng, Ảnh: Đoàn quân khởi nghĩa tiến vào Hà Nội).
+
+2/9/1945: "Tuyên ngôn Độc lập - Khai sinh nước Việt Nam Dân chủ Cộng hòa" (Biểu tượng: Bản Tuyên ngôn, Ảnh: Bác Hồ đọc Tuyên ngôn).
+
+Sau 1945: "Ý nghĩa Cách mạng Tháng Tám" (Biểu tượng: Ngôi sao vàng, Ảnh: Việt Nam trên đường đổi mới).
+
+3. Trang "Tìm hiểu về Cách mạng" (Nội dung lý thuyết):
+
+Bố cục theo chương mục giáo trình:
+
+Chương 1: Bối cảnh lịch sử Cách mạng Tháng Tám:
+
+1.1 Tình hình thế giới:
+
+Chiến tranh thế giới thứ hai bùng nổ và diễn biến phức tạp.
+
+Chủ nghĩa phát xít trỗi dậy và nguy cơ xâm lược thế giới.
+
+Phong trào giải phóng dân tộc trên thế giới phát triển mạnh mẽ.
+
+1.2 Tình hình Việt Nam trước Cách mạng:
+
+Ách đô hộ của thực dân Pháp và phát xít Nhật.
+
+Chính sách cai trị hà khắc, bóc lột tàn bạo của Pháp - Nhật.
+
+Đời sống nhân dân cực khổ, mâu thuẫn xã hội gay gắt.
+
+Các phong trào yêu nước nổ ra nhưng đều thất bại.
+
+Sự ra đời của Đảng Cộng sản Việt Nam và đường lối cách mạng đúng đắn.
+
+Chương 2: Diễn biến Cách mạng Tháng Tám:
+
+2.1 Giai đoạn chuẩn bị (1930-1945):
+
+Đảng lãnh đạo xây dựng lực lượng cách mạng (chính trị, vũ trang, quần chúng).
+
+Xây dựng căn cứ địa cách mạng, phát triển phong trào cách mạng trong cả nước.
+
+Hội nghị Trung ương 8 (5/1941) và quyết định thành lập Mặt trận Việt Minh.
+
+Cao trào kháng Nhật cứu nước (1945).
+
+Lệnh Tổng khởi nghĩa được ban bố.
+
+2.2 Giai đoạn Tổng khởi nghĩa (Tháng 8/1945):
+
+Diễn biến Tổng khởi nghĩa tại Hà Nội, Huế, Sài Gòn và các địa phương khác.
+
+Sức mạnh của quần chúng nhân dân và sự lãnh đạo tài tình của Đảng.
+
+Sự tan rã của chính quyền tay sai và quân đội Nhật.
+
+Thắng lợi nhanh chóng và triệt để của Cách mạng Tháng Tám.
+
+2.3 Thành lập nước Việt Nam Dân chủ Cộng hòa (2/9/1945):
+
+Lễ Tuyên ngôn Độc lập tại Quảng trường Ba Đình.
+
+Nội dung bản Tuyên ngôn Độc lập.
+
+Ý nghĩa lịch sử của việc thành lập nước Việt Nam Dân chủ Cộng hòa.
+
+Chương 3: Ý nghĩa lịch sử và bài học kinh nghiệm của Cách mạng Tháng Tám:
+
+3.1 Ý nghĩa lịch sử:
+
+Mở ra kỷ nguyên mới cho dân tộc Việt Nam - kỷ nguyên độc lập, tự do.
+
+Lật đổ chế độ thực dân phong kiến, xây dựng chính quyền dân chủ nhân dân.
+
+Cổ vũ phong trào giải phóng dân tộc trên thế giới.
+
+3.2 Bài học kinh nghiệm:
+
+Bài học về lãnh đạo, chỉ đạo chiến lược, sách lược đúng đắn của Đảng.
+
+Bài học về phát huy sức mạnh đại đoàn kết dân tộc.
+
+Bài học về nắm bắt thời cơ, chớp thời cơ và quyết định kịp thời.
+
+Bài học về xây dựng lực lượng cách mạng toàn diện.
+
+Nội dung chi tiết, chính xác:
+
+Văn phong: Sử dụng văn phong khoa học, khách quan, dễ hiểu, mạch lạc.
+
+Hình ảnh, sơ đồ, infographic: Sử dụng hình ảnh, video, sơ đồ, infographic minh họa cho các sự kiện, khái niệm, diễn biến lịch sử (ví dụ: sơ đồ tổ chức Đảng, infographic về diễn biến Tổng khởi nghĩa, bản đồ căn cứ địa cách mạng).
+
+Trích dẫn nguồn: Trích dẫn nguồn tài liệu lịch sử rõ ràng ở cuối mỗi chương hoặc phần nội dung quan trọng.
+
+Liên kết nội bộ: Liên kết đến các sự kiện tương ứng trên trang Timeline ở những đoạn văn bản có liên quan (ví dụ: khi nhắc đến "Hội nghị Trung ương 8", có link đến dấu mốc "Hội nghị Trung ương 8 (5/1941)" trên Timeline).
+
+4. Chatbot AI "Trợ lý Lịch sử":
+
+Vị trí: Biểu tượng chatbot nhỏ (hình tròn, màu vàng hoặc đỏ) luôn hiển thị ở góc dưới bên phải màn hình.
+
+Giao diện chatbot: Hộp thoại chat đơn giản, thân thiện, màu trắng hoặc xám nhạt, khung nhập tin nhắn ở phía dưới.
+
+Chức năng chi tiết:
+
+Giải đáp thắc mắc:
+
+Nhận dạng ngôn ngữ tự nhiên (NLU): Chatbot có khả năng nhận dạng và hiểu câu hỏi của người dùng bằng ngôn ngữ tự nhiên (tiếng Việt), không cần phải gõ lệnh hay từ khóa chính xác.
+
+Cơ sở dữ liệu kiến thức: Được huấn luyện trên cơ sở dữ liệu kiến thức phong phú về Cách mạng Tháng Tám (dựa trên giáo trình, tài liệu lịch sử).
+
+Trả lời đa dạng câu hỏi: Có thể trả lời các câu hỏi về:
+
+Sự kiện lịch sử: "Ngày 19 tháng 8 có sự kiện gì?", "Tuyên ngôn Độc lập được đọc ở đâu?", "Ai là người lãnh đạo Cách mạng Tháng Tám?".
+
+Nhân vật lịch sử: "Vai trò của Hồ Chí Minh trong Cách mạng Tháng Tám?", "Tiểu sử Võ Nguyên Giáp?".
+
+Khái niệm lịch sử: "Mặt trận Việt Minh là gì?", "Ý nghĩa của Tổng khởi nghĩa?".
+
+Bối cảnh lịch sử: "Tình hình thế giới trước Cách mạng Tháng Tám?", "Vì sao Cách mạng Tháng Tám nổ ra?".
+
+Trả lời nhanh chóng, chính xác: Chatbot phản hồi câu hỏi nhanh chóng, cung cấp câu trả lời chính xác, ngắn gọn, đi thẳng vào trọng tâm.
+
+Gợi ý câu hỏi: Khi người dùng mới mở chatbot, chatbot có thể gợi ý một số câu hỏi thường gặp hoặc chủ đề nổi bật để người dùng dễ dàng bắt đầu.
+
+Gợi ý nội dung:
+
+Phân tích câu hỏi: Chatbot phân tích câu hỏi của người dùng để hiểu rõ chủ đề quan tâm.
+
+Gợi ý liên kết nội dung: Dựa trên chủ đề quan tâm, chatbot gợi ý các liên kết đến các trang, phần nội dung liên quan trên website (timeline, trang lý thuyết) để người dùng tìm hiểu sâu hơn. Ví dụ: "Bạn muốn tìm hiểu thêm về giai đoạn Tổng khởi nghĩa? Hãy xem mục 2.2 Chương 2 trên trang 'Tìm hiểu về Cách mạng' nhé!" hoặc "Bạn có thể khám phá các sự kiện chính trong giai đoạn chuẩn bị Cách mạng trên Timeline ở giai đoạn 2."
+
+Dẫn dắt trải nghiệm:
+
+Hướng dẫn sử dụng website: Chatbot có thể hướng dẫn người dùng cách sử dụng các tính năng của website (timeline, trang lý thuyết, chatbot). Ví dụ: "Chào bạn! Để khám phá 'Hành trình Cách mạng Tháng Tám', bạn hãy bắt đầu với trang Timeline nhé!"
+
+Đề xuất lộ trình học tập: Chatbot có thể đề xuất một lộ trình học tập, khám phá nội dung website theo trình tự logic, giúp người dùng tiếp thu kiến thức hiệu quả hơn. Ví dụ: "Bạn nên bắt đầu tìm hiểu từ 'Bối cảnh lịch sử' (Chương 1), sau đó đến 'Diễn biến Cách mạng Tháng Tám' (Chương 2) và cuối cùng là 'Ý nghĩa và Bài học kinh nghiệm' (Chương 3) để có cái nhìn tổng quan nhất về Cách mạng Tháng Tám."
+
+5. Trang "Về chúng tôi" (About Us - Optional):
+
+Giới thiệu về nhóm:
+
+Tên nhóm: (Ví dụ: Nhóm "Ánh Sao Tháng Tám").
+
+Danh sách thành viên: Tên, chuyên ngành của từng thành viên (Ví dụ: Nguyễn Văn A - Lịch sử, Trần Thị B - Công nghệ thông tin).
+
+Ảnh nhóm (nếu có).
+
+Mục tiêu và ý tưởng:
+
+Mục tiêu: "Xây dựng website 'Hành trình Cách mạng Tháng Tám' nhằm cung cấp nguồn tài liệu học tập trực tuyến chất lượng, hấp dẫn về Cách mạng Tháng Tám, góp phần giáo dục truyền thống yêu nước, lòng tự hào dân tộc cho thế hệ trẻ."
+
+Ý tưởng: "Kết hợp kiến thức chuyên ngành Lịch sử và Công nghệ thông tin để tạo ra một sản phẩm website tương tác, sinh động, dễ tiếp cận, giúp người dùng khám phá lịch sử một cách chủ động và thú vị."
+
+Công nghệ và công cụ:
+
+Frontend: HTML, CSS, JavaScript, Bootstrap, TimelineJS, thư viện UI (ví dụ: ReactJS hoặc VueJS - nếu có).
+
+Backend (cho Chatbot): Dialogflow (hoặc Rasa, hoặc rule-based chatbot tự phát triển).
+
+Nguồn tài liệu: Liệt kê các nguồn tài liệu lịch sử chính thống đã sử dụng.
