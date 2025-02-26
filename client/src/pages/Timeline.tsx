@@ -3,18 +3,30 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { CalendarDays, ChevronDown, ZoomIn, ZoomOut } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { useState, useEffect } from "react";
+import { useMediaQuery } from "@/hooks/use-media-query";
 import type { HistoricalEvent } from "@shared/schema";
 import TimelineEvent from "@/components/Timeline/TimelineEvent";
+import BackgroundMusic from "@/components/BackgroundMusic";
 
 export default function Timeline() {
   const [selectedCategory, setSelectedCategory] = useState<string>("pre-revolution");
   const [zoom, setZoom] = useState(1);
+  const controls = useAnimation();
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const eventsQuery = useQuery<HistoricalEvent[]>({
     queryKey: ["/api/events"],
   });
+
+  useEffect(() => {
+    controls.start({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    });
+  }, [controls]);
 
   if (eventsQuery.isLoading) {
     return <LoadingSkeleton />;
@@ -28,8 +40,10 @@ export default function Timeline() {
 
   return (
     <div className="min-h-screen bg-dot-pattern">
+      <BackgroundMusic />
+
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.6 }}
@@ -47,19 +61,29 @@ export default function Timeline() {
         <div className="relative container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={controls}
             className="space-y-6"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 font-serif">
+            <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 font-serif">
               Dòng thời gian
               <span className="block text-primary mt-4" style={{ textShadow: "0 0 30px rgba(255,255,255,0.2)" }}>
                 Cách mạng Tháng Tám
               </span>
             </h1>
-            <div className="w-24 h-1 bg-primary mx-auto" />
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="w-24 h-1 bg-primary mx-auto"
+            />
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+              className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto"
+            >
               Khám phá các sự kiện quan trọng trong tiến trình Cách mạng Tháng Tám năm 1945
-            </p>
+            </motion.p>
           </motion.div>
         </div>
 
@@ -82,8 +106,8 @@ export default function Timeline() {
       <div className="container mx-auto px-4 -mt-8">
         <Card className="border-2 border-primary/20 shadow-lg">
           <CardContent className="p-4">
-            <div className="flex justify-between items-center">
-              <nav className="flex gap-4">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <nav className="flex flex-wrap gap-2 md:gap-4 justify-center">
                 <CategoryButton
                   active={selectedCategory === "pre-revolution"}
                   onClick={() => setSelectedCategory("pre-revolution")}
@@ -104,24 +128,26 @@ export default function Timeline() {
                 </CategoryButton>
               </nav>
 
-              <div className="flex items-center gap-2">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => setZoom(z => Math.max(0.5, z - 0.1))}
-                  disabled={zoom <= 0.5}
-                >
-                  <ZoomOut className="h-4 w-4" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => setZoom(z => Math.min(1.5, z + 0.1))}
-                  disabled={zoom >= 1.5}
-                >
-                  <ZoomIn className="h-4 w-4" />
-                </Button>
-              </div>
+              {!isMobile && (
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={() => setZoom(z => Math.max(0.5, z - 0.1))}
+                    disabled={zoom <= 0.5}
+                  >
+                    <ZoomOut className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={() => setZoom(z => Math.min(1.5, z + 0.1))}
+                    disabled={zoom >= 1.5}
+                  >
+                    <ZoomIn className="h-4 w-4" />
+                  </Button>
+                </div>
+              )}
             </div>
           </CardContent>
         </Card>
@@ -132,13 +158,18 @@ export default function Timeline() {
         <motion.div 
           className="relative"
           style={{ 
-            scale: zoom,
+            scale: isMobile ? 1 : zoom,
             transformOrigin: "center top"
           }}
         >
           {/* Timeline Line */}
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5">
-            <div className="h-full bg-gradient-to-b from-primary/40 via-primary/20 to-transparent" />
+            <motion.div
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ duration: 1 }}
+              className="h-full bg-gradient-to-b from-primary/40 via-primary/20 to-transparent"
+            />
           </div>
 
           {/* Events */}
@@ -162,8 +193,8 @@ export default function Timeline() {
               {events.map((event, index) => (
                 <div
                   key={event.id}
-                  className={`relative flex items-start gap-8 ${
-                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                  className={`relative flex flex-col ${isMobile ? "" : "md:flex-row"} items-start gap-8 ${
+                    !isMobile && index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
                 >
                   {/* Date Marker */}
@@ -175,7 +206,9 @@ export default function Timeline() {
                   />
 
                   {/* Event Card */}
-                  <div className={`w-1/2 ${index % 2 === 0 ? "pr-8" : "pl-8"}`}>
+                  <div className={`w-full ${isMobile ? "pl-8" : "md:w-1/2"} ${
+                    !isMobile && index % 2 === 0 ? "md:pr-8" : "md:pl-8"
+                  }`}>
                     <TimelineEvent event={event} />
                   </div>
                 </div>
@@ -196,7 +229,7 @@ function CategoryButton({ children, active, onClick }: {
   return (
     <Button
       variant={active ? "default" : "ghost"}
-      className={`relative text-lg font-medium ${
+      className={`relative text-sm md:text-lg font-medium ${
         active ? "bg-primary text-primary-foreground" : "hover:text-primary"
       }`}
       onClick={onClick}
