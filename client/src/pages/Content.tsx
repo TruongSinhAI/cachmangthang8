@@ -1,171 +1,226 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+
+const sections = {
+  background: [
+    {
+      id: "world",
+      title: "Bối cảnh thế giới",
+      content: [
+        "Chiến tranh thế giới thứ hai bùng nổ và diễn biến phức tạp",
+        "Chủ nghĩa phát xít trỗi dậy và nguy cơ xâm lược thế giới",
+        "Phong trào giải phóng dân tộc trên thế giới phát triển mạnh mẽ"
+      ]
+    },
+    {
+      id: "vietnam",
+      title: "Tình hình Việt Nam",
+      content: [
+        "Ách đô hộ của thực dân Pháp và phát xít Nhật",
+        "Chính sách cai trị hà khắc, bóc lột tàn bạo",
+        "Đời sống nhân dân cực khổ",
+        "Các phong trào yêu nước nổ ra liên tiếp"
+      ]
+    }
+  ],
+  events: [
+    {
+      id: "preparation",
+      title: "Giai đoạn chuẩn bị (1930-1945)",
+      content: [
+        "Đảng lãnh đạo xây dựng lực lượng cách mạng",
+        "Xây dựng căn cứ địa cách mạng",
+        "Phát triển phong trào cách mạng trong cả nước"
+      ]
+    },
+    {
+      id: "uprising",
+      title: "Tổng khởi nghĩa Tháng Tám",
+      content: [
+        "Diễn biến tại Hà Nội, Huế, Sài Gòn",
+        "Sức mạnh của quần chúng nhân dân",
+        "Thắng lợi của Cách mạng"
+      ]
+    }
+  ],
+  significance: [
+    {
+      id: "historical",
+      title: "Ý nghĩa lịch sử",
+      content: [
+        "Mở ra kỷ nguyên mới cho dân tộc Việt Nam",
+        "Lật đổ chế độ thực dân phong kiến",
+        "Xây dựng chính quyền dân chủ nhân dân"
+      ]
+    },
+    {
+      id: "lessons",
+      title: "Bài học kinh nghiệm",
+      content: [
+        "Về lãnh đạo, chỉ đạo chiến lược",
+        "Về phát huy sức mạnh đại đoàn kết dân tộc",
+        "Về nắm bắt thời cơ và quyết định kịp thời"
+      ]
+    }
+  ]
+};
 
 export default function Content() {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
-  };
+  const [selectedTab, setSelectedTab] = useState("background");
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted py-8">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
-        >
-          <Card className="border-2 border-primary/20 shadow-lg">
-            <CardContent className="pt-6">
-              <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60 mb-4">
-                Tìm hiểu về Cách mạng Tháng Tám
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                Tài liệu chi tiết về các giai đoạn, diễn biến và ý nghĩa lịch sử của Cách mạng Tháng Tám
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.6 }}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('https://source.unsplash.com/random/1920x1080?vietnam,history,documents')"
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
 
-        <Tabs defaultValue="background" className="space-y-6">
-          <Card className="border-2 border-primary/20 p-2">
-            <TabsList className="w-full justify-start gap-2">
-              <TabsTrigger value="background" className="text-lg">
+        <div className="relative container mx-auto px-4 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl font-bold text-white mb-4"
+          >
+            Tìm hiểu Cách mạng
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl text-white/90 max-w-2xl mx-auto"
+          >
+            Khám phá chi tiết về bối cảnh, diễn biến và ý nghĩa của Cách mạng Tháng Tám
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Content Navigation */}
+      <div className="container mx-auto px-4 -mt-8">
+        <Card className="border-2 border-primary/20">
+          <CardContent className="p-2">
+            <div className="flex gap-2">
+              <TabButton
+                active={selectedTab === "background"}
+                onClick={() => setSelectedTab("background")}
+              >
                 Bối cảnh lịch sử
-              </TabsTrigger>
-              <TabsTrigger value="events" className="text-lg">
+              </TabButton>
+              <TabButton
+                active={selectedTab === "events"}
+                onClick={() => setSelectedTab("events")}
+              >
                 Diễn biến
-              </TabsTrigger>
-              <TabsTrigger value="significance" className="text-lg">
+              </TabButton>
+              <TabButton
+                active={selectedTab === "significance"}
+                onClick={() => setSelectedTab("significance")}
+              >
                 Ý nghĩa
-              </TabsTrigger>
-            </TabsList>
-          </Card>
+              </TabButton>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
 
-          <TabsContent value="background">
-            <ScrollArea className="h-[600px] rounded-md border-2 border-primary/20 p-6">
-              <motion.div variants={container} initial="hidden" animate="show">
-                <motion.div variants={item}>
-                  <Card className="mb-6 border-2 border-primary/20 shadow-lg">
-                    <CardHeader>
-                      <CardTitle className="text-2xl text-primary">1. Bối cảnh thế giới</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <p className="text-lg leading-relaxed">
-                        Chiến tranh thế giới thứ hai bùng nổ và diễn biến phức tạp:
-                      </p>
-                      <ul className="list-disc pl-6 space-y-3 text-lg text-muted-foreground">
-                        <li>Chủ nghĩa phát xít trỗi dậy và nguy cơ xâm lược thế giới</li>
-                        <li>Phong trào giải phóng dân tộc trên thế giới phát triển mạnh mẽ</li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+      {/* Content Sections */}
+      <div className="container mx-auto px-4 py-12">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selectedTab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="grid gap-6"
+          >
+            {sections[selectedTab as keyof typeof sections].map((section) => (
+              <Card
+                key={section.id}
+                className="border-2 border-primary/20 overflow-hidden"
+              >
+                <CardHeader
+                  className="cursor-pointer"
+                  onClick={() => setExpandedSection(
+                    expandedSection === section.id ? null : section.id
+                  )}
+                >
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-2xl font-bold">
+                      {section.title}
+                    </CardTitle>
+                    <ChevronDown
+                      className={`h-6 w-6 transition-transform ${
+                        expandedSection === section.id ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
+                </CardHeader>
 
-                <motion.div variants={item}>
-                  <Card className="border-2 border-primary/20 shadow-lg">
-                    <CardHeader>
-                      <CardTitle className="text-2xl text-primary">2. Tình hình Việt Nam</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <p className="text-lg leading-relaxed">
-                        Ách đô hộ của thực dân Pháp và phát xít Nhật:
-                      </p>
-                      <ul className="list-disc pl-6 space-y-3 text-lg text-muted-foreground">
-                        <li>Chính sách cai trị hà khắc, bóc lột tàn bạo</li>
-                        <li>Đời sống nhân dân cực khổ</li>
-                        <li>Các phong trào yêu nước nổ ra liên tiếp</li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </motion.div>
-            </ScrollArea>
-          </TabsContent>
-
-          <TabsContent value="events">
-            <ScrollArea className="h-[600px] rounded-md border-2 border-primary/20 p-6">
-              <motion.div variants={container} initial="hidden" animate="show">
-                <motion.div variants={item}>
-                  <Card className="mb-6 border-2 border-primary/20 shadow-lg">
-                    <CardHeader>
-                      <CardTitle className="text-2xl text-primary">1. Giai đoạn chuẩn bị (1930-1945)</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <ul className="list-disc pl-6 space-y-3 text-lg text-muted-foreground">
-                        <li>Đảng lãnh đạo xây dựng lực lượng cách mạng</li>
-                        <li>Xây dựng căn cứ địa cách mạng</li>
-                        <li>Phát triển phong trào cách mạng trong cả nước</li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-
-                <motion.div variants={item}>
-                  <Card className="border-2 border-primary/20 shadow-lg">
-                    <CardHeader>
-                      <CardTitle className="text-2xl text-primary">2. Tổng khởi nghĩa Tháng Tám</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <ul className="list-disc pl-6 space-y-3 text-lg text-muted-foreground">
-                        <li>Diễn biến tại Hà Nội, Huế, Sài Gòn</li>
-                        <li>Sức mạnh của quần chúng nhân dân</li>
-                        <li>Thắng lợi của Cách mạng</li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </motion.div>
-            </ScrollArea>
-          </TabsContent>
-
-          <TabsContent value="significance">
-            <ScrollArea className="h-[600px] rounded-md border-2 border-primary/20 p-6">
-              <motion.div variants={container} initial="hidden" animate="show">
-                <motion.div variants={item}>
-                  <Card className="mb-6 border-2 border-primary/20 shadow-lg">
-                    <CardHeader>
-                      <CardTitle className="text-2xl text-primary">1. Ý nghĩa lịch sử</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <ul className="list-disc pl-6 space-y-3 text-lg text-muted-foreground">
-                        <li>Mở ra kỷ nguyên mới cho dân tộc Việt Nam</li>
-                        <li>Lật đổ chế độ thực dân phong kiến</li>
-                        <li>Xây dựng chính quyền dân chủ nhân dân</li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-
-                <motion.div variants={item}>
-                  <Card className="border-2 border-primary/20 shadow-lg">
-                    <CardHeader>
-                      <CardTitle className="text-2xl text-primary">2. Bài học kinh nghiệm</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <ul className="list-disc pl-6 space-y-3 text-lg text-muted-foreground">
-                        <li>Về lãnh đạo, chỉ đạo chiến lược</li>
-                        <li>Về phát huy sức mạnh đại đoàn kết dân tộc</li>
-                        <li>Về nắm bắt thời cơ và quyết định kịp thời</li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </motion.div>
-            </ScrollArea>
-          </TabsContent>
-        </Tabs>
+                <AnimatePresence>
+                  {expandedSection === section.id && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                    >
+                      <CardContent>
+                        <div className="prose prose-lg max-w-none">
+                          <ul className="space-y-4">
+                            {section.content.map((item, index) => (
+                              <motion.li
+                                key={index}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                                className="text-lg text-muted-foreground"
+                              >
+                                {item}
+                              </motion.li>
+                            ))}
+                          </ul>
+                        </div>
+                      </CardContent>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </Card>
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
+  );
+}
+
+function TabButton({ children, active, onClick }: {
+  children: React.ReactNode;
+  active: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <Button
+      variant={active ? "default" : "ghost"}
+      className={`text-lg relative ${active ? "" : "hover:text-primary"}`}
+      onClick={onClick}
+    >
+      {children}
+      {active && (
+        <motion.div
+          layoutId="activeTab"
+          className="absolute inset-0 bg-primary opacity-20 rounded-md"
+        />
+      )}
+    </Button>
   );
 }
