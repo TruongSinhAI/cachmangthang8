@@ -3,6 +3,8 @@ import { Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
+import musicUrl from "@/public/assets/audio/music1.mp3";
+
 export default function BackgroundMusic() {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -22,7 +24,7 @@ export default function BackgroundMusic() {
     <div className="fixed bottom-4 right-4 z-50">
       <audio
         ref={audioRef}
-        src="/audio/historical-background.mp3"
+        src={musicUrl}
         loop
         preload="auto"
       />

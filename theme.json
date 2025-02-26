@@ -3,11 +3,7 @@
   "primary": "oklch(40% 0.15 25)",
   "appearance": "system",
   "radius": 0.625,
-  "font": {
-    "sans": "'Playfair Display', serif",
-    "serif": "'Noto Serif', serif",
-    "mono": "'JetBrains Mono', monospace"
-  },
+ 
   "typography": {
     "h1": {
       "fontSize": "4rem",
@@ -23,6 +19,16 @@
     "body": {
       "fontSize": "1.125rem",
       "lineHeight": 1.6
+    }
+  },
+  "colors": {
+    "primary": {
+      "DEFAULT": "#0ea5e9",
+      "foreground": "#ffffff"
+    },
+    "secondary": {
+      "DEFAULT": "#f97316",
+      "foreground": "#ffffff"  
     }
   }
 }

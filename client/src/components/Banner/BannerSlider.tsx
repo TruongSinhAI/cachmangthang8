@@ -3,17 +3,17 @@ import { Card } from "@/components/ui/card";
 
 const bannerImages = [
   {
-    url: "https://example.com/banner1.jpg",
+    url: "https://kenh14cdn.com/thumb_w/660/203336854389633024/2022/9/2/photo-1-16620823534021357627720.jpg",
     title: "Cờ đỏ sao vàng tung bay tại Quảng trường Ba Đình",
     description: "Khí thế hào hùng của Cách mạng Tháng Tám thành công"
   },
   {
-    url: "https://example.com/banner2.jpg", 
+    url: "https://file3.qdnd.vn/data/images/0/2023/09/01/vuhuyen/tuyen-ngon.jpg?dpi=150&quality=100&w=870", 
     title: "Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập",
     description: "Khai sinh nước Việt Nam Dân chủ Cộng hòa"
   },
   {
-    url: "https://example.com/banner3.jpg",
+    url: "https://file.qdnd.vn/data/images/0/2016/12/11/thuha/111216ha26.jpg?w=578",
     title: "Đoàn người dân Hà Nội xuống đường khởi nghĩa",
     description: "Sức mạnh của quần chúng nhân dân"
   }

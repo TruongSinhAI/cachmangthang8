@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ChatbotDialog from "@/components/Chatbot/ChatbotDialog";
+import bg_img from "@/public/assets/images/im_bg.jpg";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -14,13 +15,14 @@ export default function Home() {
       {/* Hero Section with Enhanced Parallax */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <motion.div 
-          style={{ y, opacity, scale }}
+          style={{ 
+            y, opacity, scale,
+            backgroundImage: `url(${bg_img})`
+            
+          }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.8 }}
           className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{
-            backgroundImage: "url('/images/historical-background.jpg')"
-          }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-background dark:to-gray-950" />
         <div className="absolute inset-0" style={{ 

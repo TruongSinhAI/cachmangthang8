@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, Scroll, Book, Lightbulb, Globe, MapPin, Clock, Flag } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import bg_img from "@/public/assets/images/im_bg.jpg";
 
 const sections = {
   background: [
@@ -94,7 +95,7 @@ export default function Content() {
           animate={{ opacity: 0.6 }}
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/historical-background.jpg')"
+            backgroundImage: `url(${bg_img})`
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />

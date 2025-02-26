@@ -26,11 +26,14 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "client", "src"),
       "@shared": path.resolve(__dirname, "shared"),
+      "@assets": path.resolve(__dirname, "client", "public", "assets"), // Add this line
     },
   },
   root: path.resolve(__dirname, "client"),
+  publicDir: path.resolve(__dirname, "client/public"), // Add this line
   build: {
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
+    assetsDir: "assets", // Add this line
   },
 });
