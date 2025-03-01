@@ -6,19 +6,23 @@ export const historicalEvents = pgTable("historical_events", {
   id: serial("id").primaryKey(),
   title: text("title").notNull(),
   date: text("date").notNull(),
+  context: text("context").notNull(),
+  significant: text("significance").notNull(),
   description: text("description").notNull(),
   imageUrl: text("image_url"),
   category: text("category").notNull(), // pre-revolution, revolution, post-revolution
-  order: integer("order").notNull(),
+  order: integer("order"), // Making order optional as it's not in the static data
 });
 
 export const insertEventSchema = createInsertSchema(historicalEvents).pick({
   title: true,
   date: true,
   description: true,
+  context: true,
+  significant: true,
   imageUrl: true,
   category: true,
-  order: true,
+  order: true, // Keeping order in insert schema as it might be used for DB inserts
 });
 
 export type InsertEvent = z.infer<typeof insertEventSchema>;

@@ -4,10 +4,18 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+  DialogTrigger
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { CalendarDays, Clock, MapPin, Maximize2, Plus, ZoomIn, ChevronDown } from "lucide-react";
+import {
+  CalendarDays,
+  Clock,
+  MapPin,
+  Maximize2,
+  Plus,
+  ZoomIn,
+  ChevronDown
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import type { HistoricalEvent } from "@shared/schema";
@@ -15,52 +23,51 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface TimelineEventProps {
   event: HistoricalEvent;
+  theme?: "light" | "dark";
 }
 
-export default function TimelineEvent({ event }: TimelineEventProps) {
+export default function TimelineEvent({ event, theme }: TimelineEventProps) {
   const [isZoomed, setIsZoomed] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className="relative"
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.3 }}
+      className="relative"
     >
       <Card className="relative overflow-hidden group hover:shadow-xl transition-all duration-500 border-2 border-primary/20">
-        {/* Interactive Gradient Bar */}
-        <motion.div 
+        {/* Interactive Gradient Bars */}
+        <motion.div
           className="absolute top-0 left-0 h-full w-1.5 bg-gradient-to-b from-primary via-primary/80 to-primary/60"
           whileHover={{ width: "4px" }}
         />
-        <motion.div 
+        <motion.div
           className="absolute top-0 left-0 h-full w-1.5 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           whileHover={{ width: "4px" }}
         />
 
-        {/* Card Content */}
+        {/* Card Header */}
         <CardHeader className="grid grid-cols-[auto,1fr] gap-6 items-start p-6">
           <div className="flex flex-col items-center gap-2">
-            <motion.div 
+            <motion.div
+              className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20"
               whileHover={{ scale: 1.1, rotate: 360 }}
               transition={{ duration: 0.5 }}
-              className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20"
             >
               <CalendarDays className="h-6 w-6 text-primary" />
             </motion.div>
-            <motion.div 
+            <motion.div
               className="text-sm font-medium text-primary text-center"
               whileHover={{ scale: 1.1 }}
             >
-              {event.date}
+              {event.date.split("-").reverse().join("-")}
             </motion.div>
           </div>
-
           <div>
-            <motion.h3 
+            <motion.h3
               className="text-2xl font-bold text-foreground/90 group-hover:text-primary transition-colors duration-300"
               whileHover={{ x: 10 }}
             >
@@ -69,6 +76,7 @@ export default function TimelineEvent({ event }: TimelineEventProps) {
           </div>
         </CardHeader>
 
+        {/* Card Content */}
         <CardContent className="pl-24 pr-6 pb-6">
           <AnimatePresence>
             <motion.div
@@ -77,34 +85,19 @@ export default function TimelineEvent({ event }: TimelineEventProps) {
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <motion.p 
+              <motion.p
                 className="text-lg text-muted-foreground leading-relaxed mb-6"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                {showDetails ? event.description : `${event.description.slice(0, 150)}...`}
+                {event.description.slice(0, 100)}...
               </motion.p>
 
-              <div className="flex gap-4">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setShowDetails(!showDetails)}
-                  className="flex items-center gap-2"
-                >
-                  {showDetails ? "Thu gọn" : "Xem thêm"}
-                  <motion.div
-                    animate={{ rotate: showDetails ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <ChevronDown className="h-4 w-4" />
-                  </motion.div>
-                </Button>
-
+              <div className="flex justify-end">
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button 
+                    <Button
                       variant="outline"
                       size="sm"
                       className="bg-card hover:bg-primary/5 border-2 border-primary/20 text-primary hover:text-primary flex items-center gap-2"
@@ -119,59 +112,48 @@ export default function TimelineEvent({ event }: TimelineEventProps) {
                     </Button>
                   </DialogTrigger>
 
-                  <DialogContent className="max-w-4xl">
+                  <DialogContent className="max-w-7xl max-h-[80vh] ">
                     <DialogHeader>
                       <DialogTitle className="text-2xl font-bold text-primary">
                         {event.title}
                       </DialogTitle>
                     </DialogHeader>
 
-                    <motion.div 
+                    <motion.div
                       className="space-y-6"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                     >
                       {/* Interactive Image Section */}
                       {event.imageUrl && (
-                        <div 
-                          className={`relative overflow-hidden transition-all duration-500 rounded-lg ${
-                            isZoomed ? 'h-[70vh]' : 'aspect-video'
-                          }`}
+                        <div
+                          className={`h-25 w-auto overflow-hidden rounded-lg `}
                         >
-                          <motion.img
+                          {/* <motion.img
+                            src={event.imageUrl}
+                            alt={event.title}
+                            className="w-1/2 h-full  object-cover "
                             initial={{ scale: 1.1, opacity: 0 }}
-                            animate={{ 
-                              scale: 1, 
+                            animate={{
+                              scale: 1,
                               opacity: 1,
                               ...(isZoomed && { scale: 1.5 })
                             }}
                             transition={{ duration: 0.5 }}
-                            src={event.imageUrl}
-                            alt={event.title}
-                            className="w-full h-full object-cover cursor-pointer"
-                            onClick={() => setIsZoomed(!isZoomed)}
-                            whileHover={{ scale: isZoomed ? 1.6 : 1.1 }}
-                          />
-                          <motion.button
-                            className="absolute top-4 right-4 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
-                            onClick={() => setIsZoomed(!isZoomed)}
-                            whileHover={{ scale: 1.1 }}
-                          >
-                            <Maximize2 className="w-5 h-5" />
-                          </motion.button>
+                          /> */}
                         </div>
                       )}
 
-                      {/* Event Details with Animations */}
+                      {/* Event Details */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <motion.div 
+                        <motion.div
                           className="flex items-center gap-2 text-primary"
                           whileHover={{ scale: 1.05 }}
                         >
                           <CalendarDays className="h-5 w-5" />
-                          <span className="font-medium">{event.date}</span>
+                          <span className="font-medium">{event.date.split("-").reverse().join("-")}</span>
                         </motion.div>
-                        <motion.div 
+                        <motion.div
                           className="flex items-center gap-2 text-primary"
                           whileHover={{ scale: 1.05 }}
                         >
@@ -181,14 +163,16 @@ export default function TimelineEvent({ event }: TimelineEventProps) {
                       </div>
 
                       {/* Interactive Content Sections */}
-                      <ScrollArea className="h-[300px] rounded-lg bg-primary/5 p-6">
+                      <ScrollArea className="h-[700px] rounded-lg bg-primary/5 p-6">
                         <div className="space-y-6">
                           <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.2 }}
                           >
-                            <h3 className="text-lg font-semibold mb-3">Mô tả chi tiết</h3>
+                            <h3 className="text-lg font-semibold mb-3">
+                              Mô tả chi tiết
+                            </h3>
                             <p className="text-muted-foreground leading-relaxed">
                               {event.description}
                             </p>
@@ -199,10 +183,11 @@ export default function TimelineEvent({ event }: TimelineEventProps) {
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.4 }}
                           >
-                            <h3 className="text-lg font-semibold mb-3">Bối cảnh lịch sử</h3>
+                            <h3 className="text-lg font-semibold mb-3">
+                              Bối cảnh lịch sử
+                            </h3>
                             <p className="text-muted-foreground leading-relaxed">
-                              Sự kiện này là một phần quan trọng trong tiến trình Cách mạng Tháng Tám, 
-                              đánh dấu bước ngoặt trong lịch sử dân tộc Việt Nam.
+                              {event.context}
                             </p>
                           </motion.div>
 
@@ -211,10 +196,11 @@ export default function TimelineEvent({ event }: TimelineEventProps) {
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.6 }}
                           >
-                            <h3 className="text-lg font-semibold mb-3">Ý nghĩa</h3>
+                            <h3 className="text-lg font-semibold mb-3">
+                              Ý nghĩa
+                            </h3>
                             <p className="text-muted-foreground leading-relaxed">
-                              Sự kiện này có ý nghĩa quan trọng trong việc thúc đẩy tiến trình 
-                              cách mạng và góp phần vào thắng lợi chung của cuộc Cách mạng Tháng Tám.
+                              {event.significant}
                             </p>
                           </motion.div>
                         </div>
