@@ -665,7 +665,7 @@ export default function Game() {
   // Start game function
   const startGame = () => {
     setGameState('playing');
-    setTimeLeft(30);
+    setTimeLeft(180);
     setScore(0);
     setCurrentQuestion(0);
     setSelectedAnswer(null);
