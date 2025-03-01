@@ -628,7 +628,7 @@ export default function Game() {
       const response = await fetch('/api/leaderboard');
       if (!response.ok) throw new Error('Failed to fetch leaderboard');
       const data = await response.json();
-      setLeaderboard(data);
+      setLeaderboard(data.sort((a: any, b: any) => b.score - a.score));
     } catch (error) {
       console.error("Could not load leaderboard:", error);
       setLeaderboard([]);
@@ -711,7 +711,7 @@ export default function Game() {
         throw new Error('Invalid leaderboard data received');
       }
       
-      setLeaderboard(updatedLeaderboard);
+      setLeaderboard(updatedLeaderboard.sort((a, b) => b.score - a.score));
       alert('Đã lưu điểm thành công!');
       setPlayerName('');
       setGameState('start');
@@ -819,7 +819,7 @@ export default function Game() {
         <h2 className="text-2xl font-bold mb-4 text-center text-red-500">Bảng xếp hạng</h2>
         <div className="h-1 w-24 bg-red-600 mx-auto mb-6"></div>
         {leaderboard.length > 0 ? (
-          <div className="overflow-y-auto max-h-96">
+          <div className="overflow-y-auto ">
             <table className="w-full">
               <thead>
                 <tr className="border-b-2 border-red-800">

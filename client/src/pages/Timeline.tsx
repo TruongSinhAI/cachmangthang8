@@ -690,15 +690,17 @@ export default function Timeline() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     whileHover={{ scale: 1.2 }}
-                    className={`absolute left-1/2 -translate-x-1/2 z-10 flex items-center justify-center w-8 h-8 rounded-full ${
+                    className={`${event.order !== null && event.order % 2 === 0 
+                      ? "absolute left-1/2 z-10 flex items-center justify-center w-8 h-8 rounded-full" 
+                      : "absolute right-1/2 z-10 flex items-center justify-center w-8 h-8 rounded-full"} ${
                       theme === "dark"
                         ? "bg-primary shadow-lg shadow-primary/20"
                         : "bg-primary shadow-lg shadow-primary/30"
                     }`}
                   >
-                    {/* <span className="text-xs font-bold text-white">
-                      {event.date ? new Date(event.date).getDate() : event.order? event.order : index + 1}
-                    </span> */}
+                    <span className="text-xs font-bold text-white">
+                      {event.order? event.order : index + 1}
+                    </span>
                   </motion.div>
 
                   {/* Date Indicator Line */}
