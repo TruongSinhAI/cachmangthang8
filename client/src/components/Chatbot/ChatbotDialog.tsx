@@ -150,7 +150,7 @@ export default function ChatbotPage() {
           <div className="w-12 h-12 rounded-full overflow-hidden">
             <img 
               src="https://psszjkdspnyifyjbmyau.supabase.co/storage/v1/object/public/Topics/a3cbbc44-5467-40ce-a303-2bf6fb5ad734-thay_binh.jpg" 
-              alt="Trợ lý Lịch sử" 
+              alt="Thầy Bình đẹp trai" 
               className="w-full h-full object-cover"
             />
           </div>
@@ -214,7 +214,7 @@ export default function ChatbotPage() {
               <div className="flex flex-col items-center justify-center text-center h-full p-6">
                 <div className="bg-red-900/30 p-1 rounded-full mb-4">
                   {/* <Sparkles className="h-8 w-8 text-red-500" /> */}
-                  <img src="https://psszjkdspnyifyjbmyau.supabase.co/storage/v1/object/public/Topics/a3cbbc44-5467-40ce-a303-2bf6fb5ad734-thay_binh.jpg" alt="Trợ lý Lịch sử" 
+                  <img src="https://psszjkdspnyifyjbmyau.supabase.co/storage/v1/object/public/Topics/a3cbbc44-5467-40ce-a303-2bf6fb5ad734-thay_binh.jpg" alt="Thầy Bình đẹp trai" 
                   className="w-16 h-16 rounded-full object-cover " />                
                   </div>
                 <h3 className="text-xl font-medium mb-2 text-white">Chào mừng bạn!</h3>
@@ -239,7 +239,7 @@ export default function ChatbotPage() {
                         <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
                           <img 
                             src="https://psszjkdspnyifyjbmyau.supabase.co/storage/v1/object/public/Topics/a3cbbc44-5467-40ce-a303-2bf6fb5ad734-thay_binh.jpg" 
-                            alt="Trợ lý Lịch sử" 
+                            alt="Thầy Bình đẹp trai" 
                             className="w-full h-full object-cover"
                           />
                         </div>
@@ -249,7 +249,7 @@ export default function ChatbotPage() {
                           ${msg.role === "user" ? "bg-red-800 text-white" : "bg-zinc-700 text-gray-100"}`}
                       >
                         <p className={`text-xs mb-1 ${msg.role === "user" ? "text-red-200" : "text-zinc-400"}`}>
-                          {msg.role === "user" ? "Bạn" : "Trợ lý Lịch sử"}
+                          {msg.role === "user" ? "Bạn" : "Thầy Bình đẹp trai"}
                         </p>
                         <div className="prose prose-sm prose-invert">
                           {msg.role === "assistant" && msg.content === "" ? (
