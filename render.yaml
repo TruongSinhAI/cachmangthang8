@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: my-node-app
+    runtime: node
+    repo: https://github.com/TruongSinhAI/cachmangthang8  # Change this to your actual repo
+    branch: main
+    buildCommand: npm install
+    startCommand: npm run dev
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false  # Set this manually in the Render dashboard
