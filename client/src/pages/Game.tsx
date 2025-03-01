@@ -14,10 +14,17 @@ interface Question {
 export default function Game() {
   useEffect(() => {
     window.scrollTo(0, document.body.scrollHeight);
+    fetchLeaderboard(); // Gọi ngay khi component mount
+
+    const interval = setInterval(() => {
+      fetchLeaderboard();
+    }, 5000); // Cập nhật mỗi 5 giây
+
+    return () => clearInterval(interval); // Xóa interval khi component bị unmount
   }, []);
   // Game states
   const [gameState, setGameState] = useState('start'); // 'start', 'playing', 'finished'
-  const [timeLeft, setTimeLeft] = useState(30); // seconds for the game
+  const [timeLeft, setTimeLeft] = useState(180); // seconds for the game
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [playerName, setPlayerName] = useState('');
@@ -673,8 +680,11 @@ export default function Game() {
     // Check if the answer is correct
     if (answerIndex === shuffledQuestions[currentQuestion].correctAnswer) {
       // Award points based on remaining time
-      const pointsEarned: number = Math.ceil(timeLeft * 10);
+      const pointsEarned: number = 50;//Math.ceil(timeLeft * 10);
       setScore(prevScore => prevScore + pointsEarned);
+    } else {
+      // Deduct points for wrong answer
+      setScore(prevScore => Math.max(prevScore - 25, 0));
     }
 
     // Move to next question or finish the game
@@ -737,7 +747,7 @@ export default function Game() {
           {gameState === 'start' && (
             <div className="text-center flex flex-col h-full justify-center items-center">
               <h2 className="text-3xl font-bold mb-4">Kiểm tra kiến thức</h2>
-              <p className="mb-6 text-lg text-gray-300">Trả lời càng nhanh càng được nhiều điểm!</p>
+              <p className="mb-6 text-lg text-gray-300">Trả lời chính xác thì được cộng 50 điểm, sai thì trừ 25 điểm. Trong vòng 180s nhá!</p>
               <button
                 className="bg-red-700 hover:bg-red-800 text-white font-bold py-4 px-8 rounded-lg text-xl transition duration-300"
                 onClick={startGame}
