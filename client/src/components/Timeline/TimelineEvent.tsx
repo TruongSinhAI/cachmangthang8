@@ -39,7 +39,7 @@ export default function TimelineEvent({ event, theme }: TimelineEventProps) {
       className="relative"
     >
       <Card className="relative overflow-hidden group hover:shadow-xl transition-all duration-500 border-2 border-primary/20">
-        {/* Interactive Gradient Bars */}
+        {/* Enhanced Interactive Gradient Bars */}
         <motion.div
           className="absolute top-0 left-0 h-full w-1.5 bg-gradient-to-b from-primary via-primary/80 to-primary/60"
           whileHover={{ width: "4px" }}
@@ -48,8 +48,7 @@ export default function TimelineEvent({ event, theme }: TimelineEventProps) {
           className="absolute top-0 left-0 h-full w-1.5 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           whileHover={{ width: "4px" }}
         />
-
-        {/* Card Header */}
+        {/* Enhanced Card Header */}
         <CardHeader className="grid grid-cols-[auto,1fr] gap-6 items-start p-6">
           <div className="flex flex-col items-center gap-2">
             <motion.div

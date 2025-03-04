@@ -38,7 +38,7 @@ const historicalEventsData: HistoricalEvent[] = [
     "title": "Ủy ban lâm thời Khu giải phóng hạ lệnh khởi nghĩa",
     "description": "Ngày 12/8/1945, Ủy ban lâm thời Khu giải phóng, cơ quan chính quyền cách mạng được thành lập tại khu căn cứ Việt Bắc, đã chính thức hạ lệnh khởi nghĩa trong khu giải phóng. Đây là động thái đầu tiên, mang tính thử nghiệm và thăm dòng tình hình trước khi phát động tổng khởi nghĩa trên cả nước.",
     "imageUrl": "/images/revolution.jpg",
-    "order": 2,
+    "order": 1,
     "context": "Thời cơ cách mạng xuất hiện khi Nhật Bản đầu hàng Đồng minh, chính quyền tay sai hoang mang tột độ. Khu giải phóng Việt Bắc đã được xây dựng vững chắc, lực lượng cách mạng sẵn sàng cho hành động.",
     "significant": "Thể hiện sự chủ động nắm bắt thời cơ, phát động khởi nghĩa từ căn cứ địa cách mạng, tạo tiền đề cho lệnh tổng khởi nghĩa trên toàn quốc."
   },
@@ -49,7 +49,7 @@ const historicalEventsData: HistoricalEvent[] = [
     "title": "Thành lập Ủy ban Khởi nghĩa toàn quốc và ban bố Quân lệnh số 1",
     "description": "Ngày 13/8/1945, Trung ương Đảng và Tổng bộ Việt Minh quyết định thành lập Ủy ban Khởi nghĩa toàn quốc, cơ quan chỉ đạo cao nhất cho cuộc tổng khởi nghĩa. Vào 23 giờ cùng ngày, Ủy ban Khởi nghĩa toàn quốc ban bố “Quân lệnh số 1”, chính thức phát lệnh tổng khởi nghĩa trên phạm vi cả nước. Lệnh khởi nghĩa được phát đi trong đêm, thể hiện sự khẩn trương, quyết liệt của Đảng để giành chính quyền trước khi quân Đồng minh vào Đông Dương.",
     "imageUrl": "/images/revolution.jpg",
-    "order": 3,
+    "order": 2,
     "context": "Nhật Bản đầu hàng Đồng minh, thời cơ cách mạng chín muồi. Đảng nhận định rõ tình hình và nguy cơ quân Đồng minh và Pháp có thể can thiệp, quyết định chớp thời cơ để giành chính quyền.",
     "significant": "Đánh dấu thời điểm chính thức phát động Tổng khởi nghĩa Tháng Tám trên toàn quốc, thể hiện quyết tâm và sự lãnh đạo tập trung, thống nhất của Đảng."
   },
@@ -60,7 +60,7 @@ const historicalEventsData: HistoricalEvent[] = [
     "title": "Hội nghị toàn quốc của Đảng tại Tân Trào",
     "description": "Trong hai ngày 14 và 15/8/1945, Hội nghị toàn quốc của Đảng đã diễn ra tại Tân Trào, dưới sự chủ trì của lãnh tụ Hồ Chí Minh và Tổng Bí thư Trường Chinh. Hội nghị tập trung phân tích sâu sắc tình hình và dự đoán các diễn biến sắp tới. Đặc biệt, Hội nghị đã đi đến quyết định lịch sử: phát động toàn dân nổi dậy tổng khởi nghĩa giành chính quyền từ tay phát xít Nhật trước khi quân Đồng minh tiến vào Đông Dương.",
     "imageUrl": "/images/revolution.jpg",
-    "order": 4,
+    "order": 3,
     "context": "“Quân lệnh số 1” đã được ban bố, lệnh tổng khởi nghĩa đã được phát đi. Hội nghị toàn quốc được triệu tập để thống nhất ý chí và hành động của toàn Đảng, chuẩn bị mọi mặt cho cuộc tổng khởi nghĩa quyết định vận mệnh dân tộc.",
     "significant": "Hội nghị có ý nghĩa quyết định trong việc hoàn chỉnh kế hoạch tổng khởi nghĩa, xác định đường lối, phương pháp và nguyên tắc chỉ đạo, đảm bảo sự lãnh đạo thống nhất và kịp thời của Đảng."
   },
@@ -71,7 +71,7 @@ const historicalEventsData: HistoricalEvent[] = [
     "title": "Giải phóng quân tiến công đồn binh Nhật, hỗ trợ khởi nghĩa",
     "description": "Từ ngày 14/8/1945, các đơn vị Giải phóng quân bắt đầu đồng loạt tiến công vào các đồn binh Nhật ở các tỉnh Cao Bằng, Bắc Kạn, Thái Nguyên, Tuyên Quang, Yên Bái và nhiều địa phương khác. Hành động này nhằm hỗ trợ quần chúng nhân dân nổi dậy giành chính quyền tại các tỉnh lỵ, tạo khí thế cách mạng sôi sục và làm suy yếu sức kháng cự của địch.",
     "imageUrl": "/images/revolution.jpg",
-    "order": 5,
+    "order": 4,
     "context": "Sau khi có lệnh tổng khởi nghĩa, lực lượng vũ trang chủ lực là Giải phóng quân nhanh chóng triển khai các hoạt động quân sự, phối hợp chặt chẽ với lực lượng chính trị của quần chúng.",
     "significant": "Sự phối hợp nhịp nhàng giữa lực lượng vũ trang và lực lượng chính trị, thể hiện phương pháp đấu tranh kết hợp, tạo sức mạnh tổng hợp cho cuộc tổng khởi nghĩa."
   },
@@ -82,7 +82,7 @@ const historicalEventsData: HistoricalEvent[] = [
     "title": "Đại hội Quốc dân Tân Trào tán thành Tổng khởi nghĩa",
     "description": "Ngày 16/8/1945, Đại hội Quốc dân đã long trọng khai mạc tại Tân Trào. Đại hội quy tụ đại biểu từ khắp mọi miền đất nước, đại diện cho các giới, các đảng phái, đoàn thể, dân tộc và tôn giáo. Tại Đại hội, các đại biểu đã nhất trí tán thành quyết định tổng khởi nghĩa của Đảng, thể hiện ý chí và nguyện vọng của toàn dân tộc. Đại hội cũng thông qua 10 chính sách lớn của Việt Minh và quyết định thành lập Ủy ban Giải phóng dân tộc Việt Nam, do Hồ Chí Minh làm Chủ tịch.",
     "imageUrl": "/images/revolution.jpg",
-    "order": 6,
+    "order": 5,
     "context": "Hội nghị toàn quốc của Đảng đã quyết định tổng khởi nghĩa. Đại hội Quốc dân được triệu tập để hợp thức hóa quyết định mang tính toàn dân tộc, tạo nên sức mạnh đoàn kết và sự ủng hộ rộng rãi.",
     "significant": "Thể hiện tính chất dân tộc sâu rộng của Cách mạng Tháng Tám, sự đoàn kết nhất trí của toàn dân tộc dưới ngọn cờ Việt Minh, và khẳng định vai trò lãnh đạo của Hồ Chí Minh."
   },
@@ -93,7 +93,7 @@ const historicalEventsData: HistoricalEvent[] = [
     "title": "Giải phóng quân giải phóng thị xã Thái Nguyên",
     "description": "Ngày 16/8/1945, một đơn vị Giải phóng quân, dưới sự chỉ huy trực tiếp của đồng chí Võ Nguyên Giáp, xuất phát từ Tân Trào tiến về giải phóng thị xã Thái Nguyên. Đây là một trong những thị xã đầu tiên được giải phóng trong cao trào tổng khởi nghĩa, có ý nghĩa quan trọng về mặt quân sự và chính trị.",
     "imageUrl": "/images/revolution.jpg",
-    "order": 7,
+    "order": 6,
     "context": "Sau Đại hội Quốc dân, khí thế cách mạng lên cao. Giải phóng quân chủ động tiến công, mở đầu cho việc giải phóng các đô thị, trung tâm hành chính quan trọng.",
     "significant": "Thái Nguyên trở thành một trong những tỉnh lỵ đầu tiên được giải phóng, cổ vũ mạnh mẽ phong trào khởi nghĩa trên cả nước."
   },
@@ -104,7 +104,7 @@ const historicalEventsData: HistoricalEvent[] = [
     "title": "Bốn tỉnh giành chính quyền sớm nhất",
     "description": "Đến ngày 18/8/1945, trước cả khi nhận được lệnh tổng khởi nghĩa chính thức, bốn tỉnh Hải Dương, Bắc Giang, Hà Tĩnh và Quảng Nam đã chủ động giành được chính quyền về tay nhân dân. Sự chủ động, sáng tạo và quyết đoán của đảng bộ và nhân dân các địa phương này đã thể hiện tinh thần cách mạng cao độ và góp phần tạo đà thắng lợi cho cuộc tổng khởi nghĩa.",
     "imageUrl": "/images/revolution.jpg",
-    "order": 8,
+    "order": 7,
     "context": "Tinh thần chỉ đạo từ Trung ương Đảng và Tổng bộ Việt Minh đã lan tỏa mạnh mẽ. Các địa phương nắm vững chủ trương, linh hoạt vận dụng vào tình hình thực tế, chủ động khởi nghĩa khi thời cơ đến.",
     "significant": "Minh chứng cho sức mạnh của phong trào quần chúng, sự chủ động và sáng tạo của các địa phương, và khí thế cách mạng sôi sục trên cả nước."
   },
@@ -115,7 +115,7 @@ const historicalEventsData: HistoricalEvent[] = [
     "title": "Khởi nghĩa thắng lợi ở Hà Nội",
     "description": "Sáng ngày 19/8/1945, Thủ đô Hà Nội rực rỡ cờ đỏ sao vàng. Hàng vạn quần chúng cách mạng xuống đường biểu dương lực lượng, tham gia mít tinh lớn tại quảng trường Nhà hát thành phố. Cuộc mít tinh nhanh chóng chuyển thành biểu tình vũ trang, quần chúng chiếm các công sở quan trọng. Đến chiều ngày 19/8, cuộc khởi nghĩa ở Hà Nội đã toàn thắng, chính quyền về tay nhân dân.",
     "imageUrl": "/images/revolution.jpg",
-    "order": 9,
+    "order": 8,
     "context": "Khí thế cách mạng dâng cao sau lệnh tổng khởi nghĩa và thắng lợi ở nhiều địa phương. Hà Nội, trung tâm chính trị của cả nước, là mục tiêu trọng điểm của cuộc tổng khởi nghĩa.",
     "significant": "Thắng lợi ở Hà Nội có ý nghĩa quyết định đối với toàn bộ cuộc tổng khởi nghĩa, cổ vũ mạnh mẽ phong trào trên cả nước và đánh dấu sự sụp đổ của chính quyền tay sai ở trung tâm đầu não."
   },
@@ -126,7 +126,7 @@ const historicalEventsData: HistoricalEvent[] = [
     "title": "Khởi nghĩa thắng lợi ở Huế",
     "description": "Ngày 23/8/1945, tại Huế, Ủy ban khởi nghĩa Thừa Thiên Huế đã huy động lực lượng quần chúng từ ngoại thành và nội thành xuống đường biểu dương lực lượng. Trước sức mạnh áp đảo của quần chúng, bộ máy chính quyền và quân đội Nhật ở Huế hoàn toàn tê liệt. Cuộc khởi nghĩa ở Huế nhanh chóng giành thắng lợi, chính quyền về tay nhân dân.",
     "imageUrl": "/images/revolution.jpg",
-    "order": 10,
+    "order": 9,
     "context": "Thắng lợi ở Hà Nội tạo đà và kinh nghiệm cho các địa phương khác. Huế, kinh đô cũ của Việt Nam, là mục tiêu quan trọng tiếp theo.",
     "significant": "Thắng lợi ở Huế tiếp tục khẳng định sức mạnh của quần chúng và sự sụp đổ không thể tránh khỏi của chính quyền tay sai, đồng thời giải phóng một trung tâm văn hóa, chính trị lớn của đất nước."
   },
@@ -137,7 +137,7 @@ const historicalEventsData: HistoricalEvent[] = [
     "title": "Khởi nghĩa thắng lợi ở Sài Gòn",
     "description": "Đêm 24 và sáng 25/8/1945, cuộc khởi nghĩa giành chính quyền đã diễn ra mạnh mẽ tại Sài Gòn. Đêm 24/8, các lực lượng khởi nghĩa từ các tỉnh lân cận kéo về Sài Gòn. Sáng 25/8, hơn 1 triệu người dân Sài Gòn xuống đường biểu tình tuần hành thị uy, chiếm các công sở. Cuộc khởi nghĩa ở Sài Gòn thành công nhanh chóng, chính quyền về tay nhân dân.",
     "imageUrl": "/images/revolution.jpg",
-    "order": 11,
+    "order": 10,
     "context": "Sau thắng lợi ở Hà Nội và Huế, khí thế cách mạng lan rộng khắp cả nước. Sài Gòn, trung tâm kinh tế, chính trị của Nam Kỳ, là một mục tiêu then chốt.",
     "significant": "Thắng lợi ở Sài Gòn đánh dấu sự toàn thắng của cuộc Tổng khởi nghĩa Tháng Tám trên cả nước, giải phóng hoàn toàn miền Nam và khẳng định sức mạnh của toàn dân tộc."
   },
@@ -148,7 +148,7 @@ const historicalEventsData: HistoricalEvent[] = [
     "title": "Toàn quốc giành chính quyền",
     "description": "Đến ngày 28/8/1945, hai tỉnh cuối cùng là Đồng Nai Thượng và Hà Tiên cũng đã giành được chính quyền về tay nhân dân. Như vậy, chỉ trong vòng 15 ngày kể từ khi có lệnh tổng khởi nghĩa, cuộc Cách mạng Tháng Tám đã thành công trên cả nước, chính quyền hoàn toàn thuộc về nhân dân Việt Nam.",
     "imageUrl": "/images/revolution.jpg",
-    "order": 12,
+    "order": 11,
     "context": "Thắng lợi của các cuộc khởi nghĩa ở Hà Nội, Huế, Sài Gòn và các địa phương khác đã tạo điều kiện thuận lợi cho việc giành chính quyền trên phạm vi toàn quốc.",
     "significant": "Đánh dấu mốc hoàn thành cuộc Tổng khởi nghĩa Tháng Tám trên cả nước, khẳng định thắng lợi vĩ đại của cách mạng và sự ra đời của chính quyền dân chủ nhân dân."
   },
@@ -159,7 +159,7 @@ const historicalEventsData: HistoricalEvent[] = [
     "title": "Thành lập Chính phủ lâm thời nước Việt Nam Dân chủ Cộng hòa",
     "description": "Trong cuộc họp ngày 27/8/1945, Ủy ban dân tộc giải phóng được cải tổ thành Chính phủ lâm thời nước Việt Nam Dân chủ Cộng hòa, do Hồ Chí Minh làm Chủ tịch. Danh sách Chính phủ lâm thời chính thức được công bố vào ngày 28/8/1945 tại Hà Nội. Chính phủ lâm thời ra đời là bước đi quan trọng để củng cố chính quyền cách mạng và chuẩn bị cho việc tuyên bố độc lập.",
     "imageUrl": "/images/revolution.jpg",
-    "order": 13,
+    "order": 12,
     "context": "Sau khi giành được chính quyền trên cả nước, việc thành lập một chính phủ lâm thời là yêu cầu cấp thiết để quản lý đất nước và đại diện cho Việt Nam trên trường quốc tế.",
     "significant": "Đánh dấu sự ra đời của nhà nước Việt Nam Dân chủ Cộng hòa, nhà nước dân chủ nhân dân đầu tiên ở Đông Nam Á, và khẳng định vai trò lãnh đạo của Hồ Chí Minh."
   },
@@ -170,7 +170,7 @@ const historicalEventsData: HistoricalEvent[] = [
     "title": "Vua Bảo Đại thoái vị",
     "description": "Ngày 30/8/1945, tại cuộc mít tinh lớn ở Ngọ Môn, Huế, vua Bảo Đại, vị vua cuối cùng của triều Nguyễn, đã chính thức thoái vị và giao nộp ấn, kiếm tượng trưng cho chế độ quân chủ cho đại diện Chính phủ lâm thời nước Việt Nam Dân chủ Cộng hòa. Sự kiện này đánh dấu sự chấm dứt hoàn toàn của chế độ phong kiến hàng nghìn năm ở Việt Nam.",
     "imageUrl": "/images/revolution.jpg",
-    "order": 14,
+    "order": 13,
     "context": "Chính quyền cách mạng đã được thiết lập trên cả nước, chế độ quân chủ phong kiến không còn chỗ đứng. Việc Bảo Đại thoái vị là một tất yếu lịch sử.",
     "significant": "Chấm dứt chế độ quân chủ chuyên chế hàng nghìn năm, mở ra kỷ nguyên mới của chế độ dân chủ cộng hòa ở Việt Nam."
   },
@@ -181,7 +181,7 @@ const historicalEventsData: HistoricalEvent[] = [
     "title": "Lễ Tuyên ngôn Độc lập và khai sinh nước Việt Nam Dân chủ Cộng hòa",
     "description": "Ngày 2/9/1945, tại Quảng trường Ba Đình, Hà Nội, Chính phủ lâm thời nước Việt Nam Dân chủ Cộng hòa đã long trọng tổ chức Lễ Tuyên ngôn Độc lập. Chủ tịch Hồ Chí Minh thay mặt Chính phủ lâm thời đọc bản Tuyên ngôn Độc lập, trịnh trọng tuyên bố trước quốc dân và thế giới về sự ra đời của nước Việt Nam Dân chủ Cộng hòa. Sự kiện lịch sử này khai sinh ra nước Việt Nam độc lập, tự do, mở ra một kỷ nguyên mới cho dân tộc.",
     "imageUrl": "/images/independence_declaration.jpg",
-    "order": 15,
+    "order": 14,
     "context": "Sau khi Cách mạng Tháng Tám thành công, việc tuyên bố độc lập là bước đi tất yếu để khẳng định chủ quyền quốc gia và ra mắt chính phủ mới với quốc dân và thế giới.",
     "significant": "Ngày Quốc khánh của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam, đánh dấu sự kết thúc của ách đô hộ thực dân và mở ra kỷ nguyên độc lập, tự do cho dân tộc Việt Nam."
   }
@@ -328,14 +328,24 @@ export default function Timeline() {
         <motion.div
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.6 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
           className="absolute inset-0 bg-cover bg-center bg-fixed transform"
           style={{
             backgroundImage: `url(${bg_img})`,
-            filter: "brightness(0.7) contrast(1.1)",
+            filter: "brightness(0.7) contrast(1.1) saturate(1.1)",
           }}
         />
-  
+
+        {/* Enhanced Gradient Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
+
+        {/* Animated Particles Effect */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--primary-color)_0%,_transparent_70%)] opacity-10" />
+        </div>
+
         {/* Enhanced Hero Content */}
         <motion.div
           className="relative container mx-auto px-4 text-center z-10"
@@ -345,45 +355,53 @@ export default function Timeline() {
         >
           <motion.div variants={itemVariants} className="space-y-8">
             <Badge
-              className="text-lg px-6 py-2 mb-6 bg-primary/20 text-primary-foreground border border-primary/30 backdrop-blur-md"
-              style={{ boxShadow: "0 0 30px rgba(var(--primary), 0.2)" }}
+              className="text-lg px-6 py-2 mb-6 bg-primary/20 text-primary-foreground border border-primary/30 backdrop-blur-md shadow-xl"
+              style={{ 
+                boxShadow: "0 0 30px rgba(var(--primary), 0.2)",
+                backdropFilter: "blur(8px)"
+              }}
             >
               <CalendarDays className="w-5 h-5 mr-2" /> 1945
             </Badge>
-  
+
             <h1
-              className={`text-5xl md:text-7xl font-bold ${
-                theme === "dark" ? "text-white" : "text-gray-900"
-              } mb-6 font-serif tracking-tight`}
+              className={`text-5xl md:text-7xl font-bold ${theme === "dark" ? "text-white" : "text-gray-900"} mb-6 font-serif tracking-tight relative`}
             >
-              Dòng thời gian
+              <span className="relative inline-block">
+                Dòng thời gian
+                <div className="absolute -inset-1 bg-primary/10 blur-2xl opacity-50" />
+              </span>
               <motion.span
                 className="block text-primary mt-4 relative"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
                 style={{
-                  textShadow: "0 0 30px rgba(var(--primary), 0.3)",
+                  textShadow: "0 0 30px rgba(var(--primary), 0.3), 0 0 60px rgba(var(--primary), 0.1)",
                   WebkitTextStroke: "1px rgba(var(--primary), 0.3)",
                 }}
               >
                 Cách mạng Tháng Tám
               </motion.span>
             </h1>
-  
-            {/* Decorative Line */}
+
+            {/* Enhanced Decorative Line */}
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ delay: 0.7, duration: 1.5 }}
-              className="w-30 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"
-            />
-  
+              transition={{ delay: 0.7, duration: 1.5, ease: "easeInOut" }}
+              className="relative w-32 h-1 mx-auto"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary to-transparent" />
+              <div className="absolute inset-0 bg-primary/30 blur-md" />
+            </motion.div>
+
             <motion.p
               variants={itemVariants}
-              className={`text-xl md:text-2xl ${
-                theme === "dark" ? "text-white/90" : "text-gray-700"
-              } max-w-3xl mx-auto leading-relaxed`}
+              className={`text-xl md:text-2xl ${theme === "dark" ? "text-white/90" : "text-gray-700"} max-w-3xl mx-auto leading-relaxed backdrop-blur-sm px-4 py-2 rounded-lg`}
+              style={{
+                textShadow: theme === "dark" ? "0 2px 4px rgba(0,0,0,0.3)" : "none"
+              }}
             >
               Khám phá các sự kiện quan trọng trong tiến trình Cách mạng Tháng Tám
               năm 1945 - bước ngoặt lịch sử quan trọng trên con đường đấu tranh
@@ -411,11 +429,7 @@ export default function Timeline() {
           </motion.div>
         </motion.div>
       </section>
-  
-      {/* Enhanced Category Navigation */}
-      <div className="container mx-auto px-4 -mt-8">
-        {/* Navigation content can be added here */}
-      </div>
+
   
       {/* Timeline Section with Enhanced Styling */}
       <div className="container mx-auto px-4 py-16">
@@ -519,9 +533,36 @@ export default function Timeline() {
           </AnimatePresence>
         </motion.div>
       </div>
+      {/* Scroll to Top Button */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            onClick={scrollToTop}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="fixed bottom-8 right-8 p-3 rounded-full bg-primary/90 hover:bg-primary text-white shadow-lg z-50 backdrop-blur-sm border border-primary/20"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m18 15-6-6-6 6"/>
+            </svg>
+          </motion.button>
+        )}
+      </AnimatePresence>
     </div>
   );
-  
 }
 
 // -----------------------------------------------------------------------------
