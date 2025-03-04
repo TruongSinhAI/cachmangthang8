@@ -16,85 +16,329 @@ import { Badge } from "@/components/ui/badge";
 // Nội dung các section
 // -----------------------------------------------------------------------------
 const sections = {
-  background: [
+  boicanh: [
     {
-      id: "world",
-      title: "Bối cảnh thế giới: Thời cơ vàng từ Chiến tranh Thế giới II",
+      id: "boicanh-1",
+      title: "Chiến tranh thế giới thứ hai bùng nổ và diễn biến phức tạp",
       icon: null,
       content: [
-        "Chiến tranh thế giới thứ hai bước vào hồi kết, phe Đồng minh nắm thế thượng phong.",
-        "Phát xít Đức đầu hàng vô điều kiện, chấm dứt chiến tranh ở châu Âu.",
-        "Nhật Bản kiệt quệ sau hàng loạt thất bại nặng nề, bị bom nguyên tử tàn phá.",
-        "Liên Xô hùng mạnh tuyên chiến, tấn công quân Nhật ở Mãn Châu, tạo đòn quyết định."
+        "Tháng 9/1939, Chiến tranh thế giới thứ hai bùng nổ, Pháp bị Đức tấn công và đầu hàng (6/1940).",
+        "Pháp thi hành chính sách đàn áp phong trào cách mạng ở thuộc địa, tăng cường vơ vét sức người, sức của ở Đông Dương.",
+        "Tháng 9/1940, Nhật Bản xâm nhập Đông Dương, cấu kết với Pháp để thống trị và bóc lột nhân dân.",
+        "Đầu năm 1945, Chiến tranh thế giới thứ hai bước vào giai đoạn cuối, phe Đồng minh thắng thế.",
+        "Ngày 9/3/1945, Nhật đảo chính Pháp, độc chiếm Đông Dương.",
+        "Giữa tháng 8/1945, Nhật Bản đầu hàng Đồng minh, thời cơ cách mạng xuất hiện."
       ],
-      details: `Đầu năm 1945, cục diện Chiến tranh thế giới thứ hai chuyển biến mau chóng, báo hiệu ngày tàn của phe phát xít. Hồng quân Liên Xô dũng mãnh truy kích quân Đức đến tận hang ổ Berlin, giải phóng hàng loạt quốc gia Đông Âu. Tại Tây Âu, quân Đồng minh mở Mặt trận thứ hai, đổ bộ vào Pháp, siết chặt gọng kìm, đẩy lùi phát xít Đức về phía tây. Nước Pháp được giải phóng, chính phủ De Gaulle trở về Paris. Trên chiến trường Thái Bình Dương, quân Đồng minh kiểm soát các tuyến đường biển huyết mạch, cô lập Nhật Bản khỏi nguồn tiếp tế từ Đông Nam Á.  Nhật Bản rơi vào thế cùng quẫn, liên tiếp hứng chịu những đòn giáng sấm sét, đặc biệt là hai quả bom nguyên tử kinh hoàng của Mỹ.  Sự kiện Liên Xô tuyên chiến và tấn công đạo quân Quan Đông tinh nhuệ của Nhật Bản ở Mãn Châu càng đẩy nhanh quá trình đầu hàng của phát xít Nhật, tạo ra một khoảng trống quyền lực chưa từng có, một thời cơ cách mạng chín muồi cho các dân tộc bị áp bức, trong đó có Việt Nam.`
+      details: "Chiến tranh thế giới thứ hai tạo ra tình thế khủng hoảng chính trị sâu sắc ở Đông Dương, với sự cai trị của Pháp - Nhật, mâu thuẫn dân tộc trở nên gay gắt hơn bao giờ hết. Sự suy yếu của Pháp và việc Nhật đầu hàng Đồng minh tạo ra thời cơ có một không hai để nhân dân Việt Nam vùng lên giành độc lập."
+    },
+  ],
+  chuanbi: [
+    {
+      id: "chuanbi-2",
+      title: "Đảng chuyển hướng chiến lược, đặt nhiệm vụ giải phóng dân tộc lên hàng đầu",
+      icon: null,
+      content: [
+        "Đảng rút vào hoạt động bí mật, chuyển trọng tâm về nông thôn.",
+        "9/1939, Trung ương Đảng nhận định: 'Hoàn cảnh Đông Dương sẽ tiến bước đến vấn đề dân tộc giải phóng'.",
+        "11/1939, Hội nghị Trung ương Đảng xác định mục tiêu đánh đổ đế quốc, giành độc lập dân tộc, gác khẩu hiệu 'cách mạng ruộng đất'.",
+        "5/1941, Hội nghị Trung ương Đảng lần thứ 8 do Nguyễn Ái Quốc chủ trì khẳng định cách mạng Việt Nam là cách mạng giải phóng dân tộc, thành lập Mặt trận Việt Minh."
+      ],
+      details: "Chuẩn bị về đường lối chính trị được thể hiện qua sự thay đổi chiến lược của Đảng, từ cách mạng tư sản dân quyền sang cách mạng giải phóng dân tộc. Việc thành lập Mặt trận Việt Minh thể hiện sự chuẩn bị về tổ chức và tập hợp lực lượng toàn dân tộc."
     },
     {
-      id: "vietnam",
-      title: "Tình hình Việt Nam: 'Ngàn cân treo sợi tóc'",
+      id: "chuanbi-3",
+      title: "Xây dựng lực lượng vũ trang và căn cứ địa cách mạng",
       icon: null,
       content: [
-        "Nhật đảo chính Pháp ngày 9/3/1945, thiết lập ách thống trị phát xít tàn bạo.",
-        "Chính phủ Trần Trọng Kim thân Nhật ra đời, chỉ là ширмa che mắt, tay sai bù nhìn.",
-        "Nhân dân Việt Nam 'một cổ hai tròng', gánh chịu áp bức, bóc lột dã man từ phát xít Nhật.",
-        "Mâu thuẫn xã hội lên đến đỉnh điểm, nạn đói khủng khiếp 1945 đẩy dân tộc đến bờ vực."
+        "Duy trì và phát triển lực lượng vũ trang Cứu quốc quân từ du kích Bắc Sơn.",
+        "Cuối 1941, Nguyễn Ái Quốc thành lập đội vũ trang ở Cao Bằng.",
+        "12/1944, thành lập Đội Việt Nam Tuyên truyền Giải phóng quân.",
+        "Xây dựng và mở rộng căn cứ địa Cao Bằng - Bắc Kạn - Lạng Sơn, Bắc Sơn - Võ Nhai, hành lang chính trị nối liền các căn cứ."
       ],
-      details: `Ngày 9/3/1945, phát xít Nhật bất ngờ đảo chính Pháp, hất cẳng chính quyền thực dân, độc chiếm Đông Dương.  Chính phủ Pháp đầu hàng bạc nhược, cấu kết với Nhật để tiếp tục duy trì quyền lợi. Sau đảo chính, Nhật Bản dựng lên chính phủ Trần Trọng Kim, một chính phủ傀儡, hoàn toàn phục vụ cho mưu đồ thống trị của Nhật.  Nhân dân Việt Nam rơi vào cảnh 'một cổ hai tròng',  chịu sự áp bức, bóc lột thậm tệ hơn bao giờ hết.  Chính sách vơ vét, bóc lột của phát xít Nhật đẩy nền kinh tế Việt Nam đến bờ vực suy sụp, gây ra nạn đói khủng khiếp năm 1945, làm hơn 2 triệu đồng bào chết đói.  Mâu thuẫn xã hội trở nên gay gắt chưa từng có,  đất nước đứng trước nguy cơ diệt vong, đòi hỏi một cuộc cách mạng giải phóng dân tộc cấp bách.`
+      details: "Quá trình chuẩn bị lực lượng vũ trang diễn ra từng bước, từ du kích, Cứu quốc quân đến Việt Nam Tuyên truyền Giải phóng quân, kết hợp với việc xây dựng căn cứ địa vững chắc, tạo nền tảng cho đấu tranh vũ trang."
+    },
+    {
+      id: "chuanbi-4",
+      title: "Đẩy mạnh phong trào quần chúng, chuẩn bị khởi nghĩa",
+      icon: null,
+      content: [
+        "Phát triển Mặt trận Việt Minh, xây dựng các đoàn thể cứu quốc.",
+        "Xuất bản báo chí cách mạng, tuyên truyền đường lối của Đảng.",
+        "Thành lập Hội Văn hóa Cứu quốc, Đảng Dân chủ Việt Nam, mở rộng khối đại đoàn kết dân tộc.",
+        "Vận động binh lính người Việt và người Pháp.",
+        "Tháng 10/1944, Hồ Chí Minh kêu gọi chuẩn bị Đại hội Quốc dân, gấp rút chuẩn bị khởi nghĩa."
+      ],
+      details: "Công tác chuẩn bị lực lượng chính trị được đẩy mạnh thông qua việc phát triển Mặt trận Việt Minh, các đoàn thể cứu quốc, và mở rộng khối đại đoàn kết dân tộc. Công tác tuyên truyền, vận động quần chúng đóng vai trò quan trọng trong việc nâng cao ý thức cách mạng và chuẩn bị cho khởi nghĩa."
+    },
+    {
+      id: "chuanbi-5",
+      title: "Cao trào kháng Nhật cứu nước (từ tháng 3/1945)",
+      icon: null,
+      content: [
+        "9/3/1945, Nhật đảo chính Pháp, Đảng ra chỉ thị 'Nhật - Pháp bắn nhau và hành động của chúng ta', phát động cao trào kháng Nhật.",
+        "Chiến tranh du kích và khởi nghĩa từng phần nổ ra ở nhiều nơi.",
+        "Giải phóng quân và Cứu quốc quân mở rộng vùng giải phóng.",
+        "Khởi nghĩa Ba Tơ thành lập căn cứ Ba Tơ.",
+        "Thành lập Khu giải phóng Việt Bắc (6/1945), Ủy ban lâm thời Khu giải phóng ra đời.",
+        "Khẩu hiệu 'phá kho thóc, giải quyết nạn đói' thúc đẩy phong trào quần chúng."
+      ],
+      details: "Cao trào kháng Nhật cứu nước là giai đoạn tập dượt quan trọng cho tổng khởi nghĩa, thông qua các hình thức đấu tranh vũ trang và chính trị, quần chúng được giác ngộ và lực lượng cách mạng được tôi luyện, chuẩn bị trực tiếp cho tổng khởi nghĩa."
     }
   ],
-  events: [
+  dienbien: [
     {
-      id: "preparation",
-      title: "Chủ trương 'đón thời cơ' của Đảng và Mặt trận Việt Minh",
+      id: "dienbien-6",
+      title: "Ủy ban lâm thời Khu giải phóng hạ lệnh khởi nghĩa (12/8/1945)",
       icon: null,
       content: [
-        "Hội nghị Ban Thường vụ Trung ương Đảng mở rộng tại Đình Bảng, chớp thời cơ sau đảo chính.",
-        "Chỉ thị 'Nhật - Pháp bắn nhau và hành động của chúng ta' ra đời, định hướng chiến lược.",
-        "Xác định rõ kẻ thù chính là phát xít Nhật, phát động cao trào kháng Nhật cứu nước sôi sục.",
-        "Chủ trương thành lập Ủy ban Giải phóng Dân tộc Việt Nam, xây dựng Khu giải phóng vững chắc."
+        "12/8/1945, Ủy ban lâm thời Khu giải phóng hạ lệnh khởi nghĩa trong khu."
       ],
-      details: `Ngay sau khi Nhật đảo chính Pháp, nhận định thời cơ cách mạng đã đến gần, Hội nghị Ban Thường vụ Trung ương Đảng mở rộng được triệu tập khẩn cấp tại Đình Bảng (Bắc Ninh). Hội nghị phân tích sâu sắc tình hình và đề ra chủ trương chiến lược mới. Ngày 12/3/1945, Chỉ thị lịch sử 'Nhật - Pháp bắn nhau và hành động của chúng ta' được ban hành,  xác định rõ phát xít Nhật là kẻ thù chính, trực tiếp và duy nhất của nhân dân Đông Dương.  Đảng quyết định phát động cao trào kháng Nhật cứu nước mạnh mẽ,  thay đổi khẩu hiệu đấu tranh,  tập trung mọi lực lượng vào nhiệm vụ giải phóng dân tộc. Hội nghị chủ trương thành lập Ủy ban Giải phóng Dân tộc Việt Nam (sau đổi tên thành Ủy ban Dân tộc Giải phóng Việt Nam) và khẩn trương xây dựng Khu giải phóng Việt Bắc,  biến nơi đây thành căn cứ địa vững chắc,  đầu não chỉ đạo cách mạng cả nước,  chuẩn bị mọi mặt cho tổng khởi nghĩa giành chính quyền.`
+      details: null
     },
     {
-      id: "uprising",
-      title: "Tổng khởi nghĩa 'chớp nhoáng': 'Long trời lở đất'",
+      id: "dienbien-7",
+      title: "Ủy ban Khởi nghĩa toàn quốc ban bố Quân lệnh số 1 (13/8/1945)",
       icon: null,
       content: [
-        "Cao trào kháng Nhật cứu nước như 'bão táp', cuốn phăng mọi trở ngại, lan rộng khắp nước.",
-        "Ủy ban Khởi nghĩa toàn quốc thành lập, 'Quân lệnh số 1' phát ra, hiệu triệu tổng khởi nghĩa.",
-        "Tổng khởi nghĩa thắng lợi 'sét đánh không kịp bịt tai' ở Hà Nội (19/8), Huế (23/8), Sài Gòn (25/8)...",
-        "Đại hội Quốc dân Tân Trào quyết định lịch sử, thông qua tổng khởi nghĩa, bầu Ủy ban Dân tộc Giải phóng.",
-        "Ngày 2/9/1945, tại Ba Đình, Tuyên ngôn Độc lập vang vọng, khai sinh nước Việt Nam Dân chủ Cộng hòa."
+        "13/8/1945, Ủy ban Khởi nghĩa toàn quốc thành lập.",
+        "23h ngày 13/8/1945, ban bố Quân lệnh số 1, phát lệnh tổng khởi nghĩa."
       ],
-      details: `Từ giữa tháng 3/1945, cao trào kháng Nhật cứu nước bùng nổ như vũ bão,  tạo khí thế cách mạng sôi sục,  tiền đề cho tổng khởi nghĩa.  Ngày 13/8/1945,  khi Nhật Bản đầu hàng Đồng minh,  Trung ương Đảng và Tổng bộ Việt Minh lập tức thành lập Ủy ban Khởi nghĩa toàn quốc,  ban bố 'Quân lệnh số 1',  phát lệnh tổng khởi nghĩa trên phạm vi cả nước.  Tổng khởi nghĩa diễn ra vô cùng nhanh chóng,  mạnh mẽ và quyết liệt,  giành thắng lợi gần như đồng loạt ở Hà Nội (19/8),  Huế (23/8),  Sài Gòn (25/8) và hầu hết các địa phương khác trên cả nước.  Đại hội Quốc dân được triệu tập tại Tân Trào (16/8/1945)  mang tính quyết định lịch sử,  thông qua quyết định tổng khởi nghĩa,  10 chính sách lớn của Việt Minh và bầu Ủy ban Dân tộc Giải phóng Việt Nam do Hồ Chí Minh làm Chủ tịch.  Ngày 2/9/1945, tại Quảng trường Ba Đình lịch sử,  Hà Nội,  Chủ tịch Hồ Chí Minh long trọng đọc bản Tuyên ngôn Độc lập bất hủ,  tuyên bố với quốc dân đồng bào và toàn thế giới về sự ra đời của nước Việt Nam Dân chủ Cộng hòa,  khép lại trang sử nô lệ,  mở ra kỷ nguyên độc lập, tự do cho dân tộc Việt Nam.`
+      details: null
+    },
+    {
+      id: "dienbien-8",
+      title: "Hội nghị toàn quốc của Đảng quyết định Tổng khởi nghĩa (14-15/8/1945)",
+      icon: null,
+      content: [
+        "14-15/8/1945, Hội nghị toàn quốc của Đảng tại Tân Trào.",
+        "Quyết định phát động toàn dân tổng khởi nghĩa giành chính quyền trước khi quân Đồng minh vào."
+      ],
+      details: "Hội nghị xác định khẩu hiệu đấu tranh 'Phản đối xâm lược! Hoàn toàn độc lập! Chính quyền nhân dân!', và ba nguyên tắc chỉ đạo khởi nghĩa: tập trung, thống nhất, kịp thời."
+    },
+    {
+      id: "dienbien-9",
+      title: "Giải phóng quân tiến công, hỗ trợ quần chúng khởi nghĩa (từ 14/8/1945)",
+      icon: null,
+      content: [
+        "Từ 14/8/1945, Giải phóng quân tiến công đồn binh Nhật ở Cao Bằng, Bắc Kạn, Thái Nguyên...",
+        "Hỗ trợ quần chúng nổi dậy giành chính quyền ở tỉnh lỵ."
+      ],
+      details: null
+    },
+    {
+      id: "dienbien-10",
+      title: "Đại hội Quốc dân Tân Trào ủng hộ Tổng khởi nghĩa (16/8/1945)",
+      icon: null,
+      content: [
+        "16/8/1945, Đại hội Quốc dân họp tại Tân Trào.",
+        "Tán thành quyết định tổng khởi nghĩa, thông qua 10 chính sách lớn của Việt Minh.",
+        "Lập Ủy ban Giải phóng dân tộc Việt Nam do Hồ Chí Minh làm Chủ tịch."
+      ],
+      details: null
+    },
+    {
+      id: "dienbien-11",
+      title: "Giải phóng thị xã Thái Nguyên (16/8/1945)",
+      icon: null,
+      content: [
+        "16/8/1945, Giải phóng quân giải phóng thị xã Thái Nguyên."
+      ],
+      details: "Đơn vị Giải phóng quân do Võ Nguyên Giáp chỉ huy tiến về giải phóng Thái Nguyên."
+    },
+    {
+      id: "dienbien-12",
+      title: "Bốn tỉnh giành chính quyền sớm nhất (18/8/1945)",
+      icon: null,
+      content: [
+        "18/8/1945, Hải Dương, Bắc Giang, Hà Tĩnh, Quảng Nam giành chính quyền."
+      ],
+      details: "Các tỉnh giành chính quyền trước cả khi nhận được lệnh tổng khởi nghĩa chính thức, thể hiện sự chủ động và khí thế cách mạng."
+    },
+    {
+      id: "dienbien-13",
+      title: "Khởi nghĩa thắng lợi ở Hà Nội (19/8/1945)",
+      icon: null,
+      content: [
+        "19/8/1945, khởi nghĩa thắng lợi ở Hà Nội.",
+        "Quần chúng chiếm Phủ Khâm sai, Tòa Thị chính, Trại Bảo an binh..."
+      ],
+      details: "Cuộc mít tinh ngày 17/8 biến thành cuộc biểu dương lực lượng của Việt Minh, tạo tiền đề cho khởi nghĩa ngày 19/8."
+    },
+    {
+      id: "dienbien-14",
+      title: "Khởi nghĩa thắng lợi ở Huế (23/8/1945)",
+      icon: null,
+      content: [
+        "23/8/1945, khởi nghĩa thắng lợi ở Huế.",
+        "Quần chúng chiếm các công sở, chính quyền Nhật tê liệt."
+      ],
+      details: null
+    },
+    {
+      id: "dienbien-15",
+      title: "Khởi nghĩa thắng lợi ở Sài Gòn (25/8/1945)",
+      icon: null,
+      content: [
+        "25/8/1945, khởi nghĩa thắng lợi ở Sài Gòn.",
+        "Hơn 1 triệu người biểu tình, chiếm các công sở."
+      ],
+      details: "Lực lượng khởi nghĩa từ các tỉnh lân cận kéo về Sài Gòn, tạo nên sức mạnh áp đảo."
+    },
+    {
+      id: "dienbien-16",
+      title: "Toàn quốc về tay nhân dân (28/8/1945)",
+      icon: null,
+      content: [
+        "28/8/1945, Đồng Nai Thượng và Hà Tiên giành chính quyền.",
+        "Tổng khởi nghĩa thắng lợi trên cả nước."
+      ],
+      details: null
+    },
+    {
+      id: "dienbien-17",
+      title: "Thành lập Chính phủ lâm thời (27-28/8/1945)",
+      icon: null,
+      content: [
+        "27-28/8/1945, thành lập Chính phủ lâm thời nước Việt Nam Dân chủ Cộng hòa.",
+        "Hồ Chí Minh làm Chủ tịch."
+      ],
+      details: "Ủy ban dân tộc giải phóng cải tổ thành Chính phủ lâm thời, công bố danh sách chính phủ ngày 28/8."
+    },
+    {
+      id: "dienbien-18",
+      title: "Vua Bảo Đại thoái vị (30/8/1945)",
+      icon: null,
+      content: [
+        "30/8/1945, vua Bảo Đại thoái vị tại Huế."
+      ],
+      details: "Bảo Đại giao nộp ấn, kiếm cho đại diện Chính phủ lâm thời, chấm dứt chế độ phong kiến."
+    },
+    {
+      id: "dienbien-19",
+      title: "Tuyên ngôn Độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa (2/9/1945)",
+      icon: null,
+      content: [
+        "2/9/1945, Lễ Tuyên ngôn Độc lập tại Quảng trường Ba Đình, Hà Nội.",
+        "Hồ Chí Minh đọc Tuyên ngôn Độc lập, tuyên bố thành lập nước Việt Nam Dân chủ Cộng hòa."
+      ],
+      details: "Bản Tuyên ngôn khẳng định quyền độc lập, tự do của dân tộc Việt Nam và ý chí bảo vệ nền độc lập đó."
     }
   ],
-  significance: [
+  tinhchat: [
     {
-      id: "historical",
-      title: "Ý nghĩa 'vang dội năm châu' của Cách mạng Tháng Tám",
+      id: "tinhchat-20",
+      title: "Cách mạng giải phóng dân tộc điển hình",
       icon: null,
       content: [
-        "Chấm dứt gần một thế kỷ đêm dài nô lệ dưới gót giày thực dân, đế quốc.",
-        "Xóa bỏ chế độ quân chủ chuyên chế ngàn năm, lỗi thời, lạc hậu.",
-        "Khai sinh nước Việt Nam Dân chủ Cộng hòa, nhà nước dân chủ nhân dân đầu tiên ở Đông Nam Á.",
-        "Mở ra kỷ nguyên mới - kỷ nguyên độc lập, tự do, dân chủ và chủ nghĩa xã hội cho dân tộc.",
-        "Cổ vũ mạnh mẽ phong trào giải phóng dân tộc trên toàn thế giới, báo hiệu 'bão táp cách mạng'."
+        "Mục tiêu hàng đầu: giải phóng dân tộc khỏi ách đế quốc.",
+        "Giải quyết mâu thuẫn chủ yếu: dân tộc Việt Nam và đế quốc xâm lược.",
+        "Lực lượng cách mạng: toàn dân tộc đoàn kết trong Mặt trận Việt Minh.",
+        "Chính quyền nhà nước: của chung toàn dân tộc, hình thức cộng hòa dân chủ."
       ],
-      details: `Cách mạng Tháng Tám năm 1945 mang trong mình ý nghĩa lịch sử vô cùng to lớn, không chỉ đối với dân tộc Việt Nam mà còn có tầm vóc quốc tế sâu rộng.  Thắng lợi vĩ đại này đã chấm dứt chế độ thực dân, phong kiến kéo dài gần một thế kỷ,  lật đổ chế độ quân chủ chuyên chế đã tồn tại hàng nghìn năm,  mở ra một trang sử mới cho dân tộc.  Sự ra đời của nước Việt Nam Dân chủ Cộng hòa,  nhà nước dân chủ nhân dân đầu tiên ở Đông Nam Á,  là một mốc son chói lọi,  khẳng định quyền làm chủ đất nước của nhân dân Việt Nam.  Cách mạng Tháng Tám mở ra kỷ nguyên độc lập, tự do, dân chủ và tiến lên chủ nghĩa xã hội cho dân tộc Việt Nam.  Đồng thời,  thắng lợi này còn có ý nghĩa quốc tế vô cùng to lớn,  cổ vũ mạnh mẽ phong trào giải phóng dân tộc trên toàn thế giới,  đánh dấu bước khởi đầu của thời kỳ sụp đổ không thể đảo ngược của chủ nghĩa thực dân cũ,  góp phần làm thay đổi cục diện thế giới sau Chiến tranh Thế giới thứ hai.`
+      details: "Cách mạng Tháng Tám tập trung cao độ vào nhiệm vụ giải phóng dân tộc, thể hiện tính triệt để và điển hình của một cuộc cách mạng giải phóng dân tộc trong bối cảnh thuộc địa."
     },
     {
-      id: "lessons",
-      title: "Bài học kinh nghiệm 'vô giá' từ Cách mạng Tháng Tám",
+      id: "tinhchat-21",
+      title: "Mang tính chất dân chủ mới, chưa triệt để",
       icon: null,
       content: [
-        "Giương cao ngọn cờ giải phóng dân tộc, đặt lợi ích quốc gia lên trên hết.",
-        "Xây dựng khối đại đoàn kết dân tộc 'vững như bàn thạch', dựa vào sức mạnh toàn dân.",
-        "Nắm vững bạo lực cách mạng, kết hợp 'nhuần nhuyễn' đấu tranh chính trị và vũ trang.",
-        "Chớp thời cơ 'ngàn năm có một',  hành động kiên quyết,  tổng khởi nghĩa 'đúng thời điểm'.",
-        "Xây dựng Đảng Cộng sản 'trong sạch, vững mạnh',  đường lối đúng đắn,  gắn bó máu thịt với dân."
+        "Mang tính chất dân chủ mới, là một bộ phận của cách mạng dân tộc dân chủ nhân dân.",
+        "Giải quyết một số quyền lợi dân chủ, xóa bỏ chế độ phong kiến.",
+        "Chưa làm cách mạng ruộng đất triệt để, chưa xóa bỏ hoàn toàn tàn tích phong kiến."
       ],
-      details: `Cách mạng Tháng Tám năm 1945 không chỉ là một chiến thắng vĩ đại mà còn để lại những bài học kinh nghiệm vô giá cho sự nghiệp cách mạng Việt Nam và phong trào giải phóng dân tộc trên thế giới.  Đó là bài học về: (1)  Luôn giương cao ngọn cờ giải phóng dân tộc,  xác định đúng đắn mối quan hệ giữa nhiệm vụ dân tộc và dân chủ,  đặt lợi ích quốc gia, dân tộc lên trên hết.  (2)  Xây dựng và phát huy sức mạnh vĩ đại của khối đại đoàn kết toàn dân tộc,  dựa trên nền tảng liên minh công - nông vững chắc.  (3)  Nắm vững quan điểm bạo lực cách mạng của quần chúng,  kết hợp nhuần nhuyễn đấu tranh chính trị với đấu tranh vũ trang,  sử dụng sức mạnh tổng hợp để giành thắng lợi.  (4)  Chớp thời cơ cách mạng 'ngàn năm có một',  kiên quyết,  dứt khoát phát động tổng khởi nghĩa giành chính quyền khi thời cơ chín muồi.  (5)  Xây dựng một Đảng Cộng sản vững mạnh về mọi mặt,  có đường lối chính trị đúng đắn,  sáng tạo,  linh hoạt,  và có mối liên hệ máu thịt,  gắn bó mật thiết với quần chúng nhân dân,  được nhân dân tin yêu,  ủng hộ và bảo vệ.  Những bài học kinh nghiệm này vẫn còn nguyên giá trị thời sự,  tiếp tục soi đường,  chỉ lối cho sự nghiệp xây dựng và bảo vệ Tổ quốc Việt Nam xã hội chủ nghĩa ngày nay.`
+      details: "Tuy mang tính chất dân chủ, nhưng do nhiệm vụ hàng đầu là giải phóng dân tộc, nên Cách mạng Tháng Tám chưa giải quyết triệt để vấn đề ruộng đất và các tàn tích phong kiến, tính chất dân chủ chưa đầy đủ và sâu sắc."
+    },
+    {
+      id: "tinhchat-22",
+      title: "Đậm tính nhân văn",
+      icon: null,
+      content: [
+        "Giải phóng con người Việt Nam khỏi áp bức dân tộc, bóc lột giai cấp, nô dịch tinh thần."
+      ],
+      details: "Cách mạng Tháng Tám không chỉ giành độc lập dân tộc mà còn hướng tới giải phóng con người toàn diện, thể hiện giá trị nhân văn sâu sắc."
+    }
+  ],
+  baihoc: [
+    {
+      id: "baihoc-23",
+      title: "Giương cao ngọn cờ giải phóng dân tộc",
+      icon: null,
+      content: [
+        "Đặt nhiệm vụ giải phóng dân tộc lên hàng đầu.",
+        "Giải quyết đúng đắn mối quan hệ giữa độc lập dân tộc và cách mạng ruộng đất."
+      ],
+      details: "Bài học về chỉ đạo chiến lược, nhấn mạnh vai trò quyết định của nhiệm vụ giải phóng dân tộc trong cách mạng thuộc địa."
+    },
+    {
+      id: "baihoc-24",
+      title: "Xây dựng khối đại đoàn kết dân tộc",
+      icon: null,
+      content: [
+        "Dựa trên liên minh công nông, khơi dậy tinh thần dân tộc.",
+        "Tập hợp mọi lực lượng yêu nước trong mặt trận dân tộc thống nhất rộng rãi (Việt Minh)."
+      ],
+      details: "Bài học về xây dựng lực lượng, khẳng định sức mạnh của khối đại đoàn kết toàn dân tộc trong sự nghiệp cách mạng."
+    },
+    {
+      id: "baihoc-25",
+      title: "Nắm vững bạo lực cách mạng, kết hợp đấu tranh chính trị và vũ trang",
+      icon: null,
+      content: [
+        "Xây dựng lực lượng chính trị và vũ trang.",
+        "Kết hợp đấu tranh chính trị với đấu tranh vũ trang.",
+        "Tiến hành chiến tranh du kích cục bộ, khởi nghĩa từng phần tiến tới tổng khởi nghĩa."
+      ],
+      details: "Bài học về phương pháp cách mạng, nhấn mạnh vai trò của bạo lực cách mạng và sự kết hợp linh hoạt các hình thức đấu tranh."
+    },
+    {
+      id: "baihoc-26",
+      title: "Xây dựng Đảng vững mạnh",
+      icon: null,
+      content: [
+        "Xây dựng Đảng tiên phong, trung thành với lợi ích dân tộc.",
+        "Đề ra đường lối chính trị đúng đắn.",
+        "Xây dựng Đảng vững mạnh về tư tưởng, chính trị, tổ chức.",
+        "Liên hệ mật thiết với quần chúng, cán bộ đảng viên kiên cường."
+      ],
+      details: "Bài học về xây dựng Đảng, khẳng định vai trò lãnh đạo quyết định của Đảng Cộng sản Đông Dương đối với thắng lợi của Cách mạng Tháng Tám."
+    }
+  ],
+  ynghia: [
+    {
+      id: "ynghia-27",
+      title: "Ý nghĩa lịch sử trọng đại đối với dân tộc",
+      icon: null,
+      content: [
+        "Đập tan xiềng xích nô lệ của chủ nghĩa đế quốc gần một thế kỷ.",
+        "Chấm dứt chế độ quân chủ chuyên chế hàng nghìn năm.",
+        "Lập nên nước Việt Nam Dân chủ Cộng hòa, nhà nước dân chủ nhân dân đầu tiên ở Đông Nam Á.",
+        "Nhân dân Việt Nam từ thân phận nô lệ trở thành người chủ đất nước.",
+        "Mở ra kỷ nguyên mới: độc lập, tự do và hướng tới chủ nghĩa xã hội."
+      ],
+      details: "Cách mạng Tháng Tám là một bước ngoặt vĩ đại trong lịch sử dân tộc, đưa Việt Nam bước sang một trang mới, kỷ nguyên của độc lập, tự do và phát triển theo con đường xã hội chủ nghĩa."
+    },
+    {
+      id: "ynghia-28",
+      title: "Ý nghĩa quốc tế sâu sắc",
+      icon: null,
+      content: [
+        "Cuộc cách mạng giải phóng dân tộc đầu tiên thành công ở một nước thuộc địa.",
+        "Đột phá hệ thống thuộc địa của chủ nghĩa đế quốc, mở đầu thời kỳ tan rã của chủ nghĩa thực dân cũ.",
+        "Cổ vũ mạnh mẽ phong trào giải phóng dân tộc trên thế giới.",
+        "Góp phần làm phong phú thêm lý luận Mác - Lênin về cách mạng giải phóng dân tộc."
+      ],
+      details: "Thắng lợi của Cách mạng Tháng Tám có ý nghĩa quốc tế to lớn, là nguồn cảm hứng và động lực cho các dân tộc bị áp bức trên thế giới trong cuộc đấu tranh giành độc lập, tự do."
+    },
+    {
+      id: "ynghia-29",
+      title: "Khẳng định đường lối lãnh đạo đúng đắn của Đảng và tư tưởng Hồ Chí Minh",
+      icon: null,
+      content: [
+        "Thắng lợi của đường lối giải phóng dân tộc đúng đắn, sáng tạo của Đảng.",
+        "Thắng lợi của tư tưởng độc lập, tự do của Hồ Chí Minh.",
+        "Chứng minh khả năng lãnh đạo cách mạng thành công của Đảng Cộng sản ở nước thuộc địa."
+      ],
+      details: "Cách mạng Tháng Tám là minh chứng sinh động cho sự lãnh đạo tài tình và sáng suốt của Đảng Cộng sản Đông Dương và Chủ tịch Hồ Chí Minh, khẳng định đường lối cách mạng đúng đắn và phù hợp với thực tiễn Việt Nam."
     }
   ]
 };
@@ -102,51 +346,53 @@ const sections = {
 // Component chính Content
 // -----------------------------------------------------------------------------
 export default function Content() {
-  
   useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
-  const [selectedTab, setSelectedTab] = useState("background");
+    window.scrollTo(0, 0);
+  }, []);
+  
+  const [selectedTab, setSelectedTab] = useState("boicanh");
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-background to-background/95">
       {/* -------------------- Hero Section -------------------- */}
-      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.6 }}
-          className="absolute inset-0 bg-cover bg-center"
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 0.7, scale: 1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute inset-0 bg-cover bg-center filter blur-sm"
           style={{ backgroundImage: `url(${bg_img})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background" />
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              'url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')',
-            opacity: 0.1
+              'url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.08"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')',
+            opacity: 0.15
           }}
         />
         <div className="relative container mx-auto px-4 text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold text-white mb-4 font-serif"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-6xl font-bold text-white mb-6 font-serif tracking-tight"
           >
             Tìm hiểu Cách mạng
           </motion.h1>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="w-24 h-1 bg-primary mx-auto my-6"
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="w-32 h-1 bg-gradient-to-r from-primary/80 to-primary mx-auto my-8"
           />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-white/90 max-w-2xl mx-auto"
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed"
           >
             Khám phá chi tiết về bối cảnh, diễn biến và ý nghĩa của Cách mạng
             Tháng Tám
@@ -155,30 +401,51 @@ export default function Content() {
       </section>
 
       {/* -------------------- Navigation Tab -------------------- */}
-      <div className="container mx-auto px-4 -mt-8">
-        <Card className="border-2 border-primary/20 backdrop-blur-md shadow-lg">
-          <CardContent className="p-2">
+      <div className="container mx-auto px-4 -mt-10">
+        <Card className="border-2 border-primary/30 backdrop-blur-xl shadow-xl bg-background/95">
+          <CardContent className="p-3">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <ScrollArea className="w-full md:w-auto">
-                <nav className="flex flex-nowrap md:flex-wrap gap-2 md:gap-4 p-1">
+                <nav className="flex flex-nowrap md:flex-wrap gap-3 md:gap-5 p-2">
                   <TabButton
-                    active={selectedTab === "background"}
-                    onClick={() => setSelectedTab("background")}
-                    count={sections.background.length}
+                    active={selectedTab === "boicanh"}
+                    onClick={() => setSelectedTab("boicanh")}
+                    count={sections.boicanh.length}
                   >
-                    Bối cảnh lịch sử
+                    Bối cảnh thế giới
                   </TabButton>
                   <TabButton
-                    active={selectedTab === "events"}
-                    onClick={() => setSelectedTab("events")}
-                    count={sections.events.length}
+                    active={selectedTab === "chuanbi"}
+                    onClick={() => setSelectedTab("chuanbi")}
+                    count={sections.chuanbi.length}
                   >
-                    Diễn biến
+                    Bối cảnh và sự chuẩn bị của ta
                   </TabButton>
                   <TabButton
-                    active={selectedTab === "significance"}
-                    onClick={() => setSelectedTab("significance")}
-                    count={sections.significance.length}
+                    active={selectedTab === "dienbien"}
+                    onClick={() => setSelectedTab("dienbien")}
+                    count={sections.dienbien.length}
+                  >
+                    Diễn biến chi tiết
+                  </TabButton>
+                  <TabButton
+                    active={selectedTab === "tinhchat"}
+                    onClick={() => setSelectedTab("tinhchat")}
+                    count={sections.tinhchat.length}
+                  >
+                    Tính chất của cuộc cách mạng
+                  </TabButton>
+                  <TabButton
+                    active={selectedTab === "baihoc"}
+                    onClick={() => setSelectedTab("baihoc")}
+                    count={sections.baihoc.length}
+                  >
+                    Bài học
+                  </TabButton>
+                  <TabButton
+                    active={selectedTab === "ynghia"}
+                    onClick={() => setSelectedTab("ynghia")}
+                    count={sections.ynghia.length}
                   >
                     Ý nghĩa
                   </TabButton>
@@ -190,31 +457,31 @@ export default function Content() {
       </div>
 
       {/* -------------------- Content Sections -------------------- */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-16">
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedTab}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="grid gap-6"
+            className="grid gap-8"
           >
             {sections[selectedTab as keyof typeof sections].map((section) => (
               <Card
                 key={section.id}
-                className="border-2 border-primary/20 backdrop-blur-md shadow-md hover:shadow-xl transition-shadow duration-300"
+                className="border-2 border-primary/30 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-background/95"
               >
                 <CardHeader
-                  className="cursor-pointer relative"
+                  className="cursor-pointer relative group"
                   onClick={() =>
                     setExpandedSection(
                       expandedSection === section.id ? null : section.id
                     )
                   }
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-lg" />
+                  <div className="flex items-center gap-6">
+                    <div className="p-4 rounded-xl bg-primary/15 text-primary group-hover:bg-primary/25 transition-colors duration-300">
                       {section.icon}
                     </div>
                     <div className="flex-1">
@@ -223,7 +490,7 @@ export default function Content() {
                       </CardTitle>
                     </div>
                     <ChevronDown
-                      className={`h-6 w-6 text-primary transition-transform duration-300 ${
+                      className={`h-7 w-7 text-primary transition-all duration-500 ${
                         expandedSection === section.id ? "rotate-180" : ""
                       }`}
                     />
@@ -235,37 +502,39 @@ export default function Content() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.4 }}
                     >
-                      <CardContent className="space-y-6">
-                        {/* Các điểm chính */}
-                        <div className="grid gap-4">
+                      <CardContent className="space-y-8 pt-4">
+                        {/* Main points */}
+                        <div className="grid gap-5">
                           {section.content.map((item, index) => (
                             <motion.div
                               key={index}
                               initial={{ opacity: 0, x: -20 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: index * 0.1 }}
-                              className="flex items-start gap-3"
+                              className="flex items-start gap-4 group"
                             >
-                              <div className="w-2.5 h-2.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                              <p className="text-lg ">{item}</p>
+                              <div className="w-3 h-3 rounded-full bg-primary/80 mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
+                              <p className="text-lg leading-relaxed">{item}</p>
                             </motion.div>
                           ))}
                         </div>
-                        {/* Nội dung chi tiết */}
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ delay: 0.3 }}
-                          className="bg-primary/5 rounded-lg p-6 border-2 border-primary/10"
-                        >
-                          <ScrollArea className="h-[200px] pr-4">
-                            <p className=" leading-relaxed whitespace-pre-wrap">
-                              {section.details}
-                            </p>
-                          </ScrollArea>
-                        </motion.div>
+                        {/* Detailed content */}
+                        {section.details && (
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.3 }}
+                            className="bg-primary/10 rounded-xl p-8 border-2 border-primary/20"
+                          >
+                            <ScrollArea className="h-[250px] pr-6">
+                              <p className="text-lg leading-relaxed whitespace-pre-wrap">
+                                {section.details}
+                              </p>
+                            </ScrollArea>
+                          </motion.div>
+                        )}
                       </CardContent>
                     </motion.div>
                   )}
@@ -280,7 +549,7 @@ export default function Content() {
 }
 
 // -----------------------------------------------------------------------------
-// Component TabButton cho Navigation
+// TabButton Component for Navigation
 // -----------------------------------------------------------------------------
 function TabButton({
   children,
@@ -296,17 +565,22 @@ function TabButton({
   return (
     <Button
       variant={active ? "default" : "ghost"}
-      className={`relative text-sm md:text-lg font-medium whitespace-nowrap ${
+      className={`relative text-base md:text-lg font-medium whitespace-nowrap transition-all duration-300 ${
         active
-          ? "hover:text-primary text-white/80"
-          : "hover:text-primary text-white/80"
+          ? "hover:text-primary/90 text-white shadow-lg"
+          : "hover:text-primary/90 text-white/70 hover:bg-primary/20"
       }`}
       onClick={onClick}
     >
       <span className="flex items-center gap-2">
         {children}
         {count > 0 && (
-          <Badge variant={active ? "outline" : "secondary"} className="text-xs ml-1">
+          <Badge 
+            variant={active ? "outline" : "secondary"} 
+            className={`text-xs ml-1 transition-colors duration-300 ${
+              active ? "bg-primary/20" : ""
+            }`}
+          >
             {count}
           </Badge>
         )}
@@ -314,7 +588,7 @@ function TabButton({
       {active && (
         <motion.div
           layoutId="activeCategory"
-          className="absolute inset-0 rounded-md"
+          className="absolute inset-0 rounded-md bg-primary/20"
           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
         />
       )}
