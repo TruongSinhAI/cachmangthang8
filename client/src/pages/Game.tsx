@@ -635,6 +635,7 @@ export default function Game() {
       const response = await fetch('/api/leaderboard');
       if (!response.ok) throw new Error('Failed to fetch leaderboard');
       const data = await response.json();
+      console.log(data);
       setLeaderboard(data.sort((a: any, b: any) => b.score - a.score));
     } catch (error) {
       console.error("Could not load leaderboard:", error);
